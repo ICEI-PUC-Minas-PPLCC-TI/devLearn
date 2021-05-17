@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>devLearn • Pesquisa </title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+<link href="styles/style.css" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+</head>
+
+<body>
+<div id="preloader">
+<div class="inner">
+<div class="bolas">
+<div></div>
+<div></div>
+<div></div>                    
+</div>
+</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img src="assets/logo.png" width="130">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="#!">
+<button class="btn btn-roxo" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
+</a>
+</li>
+</ul>
+<form id="busca-2">
+<input type="search" placeholder="Search">
+</form>
+</div>
+</div>
+</nav>
+
+<header class="bg-roxodev mb-5">
+<div class="container h-100">
+<div class="row align-items-center no-gutters">
+<div class="col-xl-6 col-lg-6 col-md-12">
+<div class="py-5 py-lg-0">
+<h5 class="text-white display-4 titulo-roxo mt-4" style="font-size: 35px;">
+<span style="color: #472d87">resultado da pesquisa:</span>
+<br>
+Curso Python
+</h5>
+<p class="mb-4 text-white">
+<i>Python é uma linguagem de programação de alto nível, interpretada de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991.</i>
+</p>
+<p class="mb-4 text-white">
+<span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+<span style="font-size: 15px">★★★★☆</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<div class="pb-10">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-12 col-12 mt-n8 mb-4 mb-lg-0">
+<img src="assets/img-video.png" class="img-fluid mb-4">	
+<div class="card rounded-lg">
+<div class="card-header border-bottom-0 p-0">
+<div>
+<ul class="nav nav-lb-tab" id="tab" role="tablist">
+<li class="nav-item">
+<a class="nav-link" id="conteudo-tab" data-toggle="pill" href="#conteudo" role="conteudo" aria-controls="conteudo" aria-selected="true">Conteúdo</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="descricao-tab" data-toggle="pill" href="#descricao" role="tab" aria-controls="descricao" aria-selected="false">Descrição</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="avaliacao-tab" data-toggle="pill" href="#avaliacao" role="tab" aria-controls="avaliacao" aria-selected="false">Avaliações</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="card-body">
+<div class="tab-content" id="tabContent">
+<div class="tab-pane fade show active" id="conteudo" role="tabpanel" aria-labelledby="conteudo-tab">
+<div class="accordion" id="courseAccordion">
+<div class="texto-escuro">
+<ul class="list-group list-group-flush">
+<li class="list-group-item px-0 pt-0">
+<a class=" h4 mb-0 d-flex align-items-center text-inherit text-decoration-none active" data-toggle="collapse" href="#introducao" aria-expanded="true" aria-controls="introducao">
+<div class="mr-auto">
+Introdução a Python
+</div>
+</a>
+<div class="collapse show" id="introducao" data-parent="#courseAccordion">
+<div class="pt-3 pb-2">
+<a class="mb-2 d-flex justify-content-between align-items-center text-inherit text-decoration-none">
+<div class="text-truncate">
+<span>Introdução</span>
+</div>
+<div class="text-truncate">
+<span>1m 7s</span>
+</div>
+</a>
+<a  class="mb-2 d-flex justify-content-between align-items-center text-inherit text-decoration-none">
+<div class="text-truncate">
+<span>Instalando componentes</span>
+</div>
+<div class="text-truncate">
+<span>1m 11s</span>
+</div>
+</a>
+<a class="mb-2 d-flex justify-content-between align-items-center text-inherit text-decoration-none">
+<div class="text-truncate">
+<span>Primeiro projeto</span>
+</div>
+<div class="text-truncate">
+<span>6m 33s</span>
+</div>
+</a>
+<a  class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
+<div class="text-truncate">
+<span>Considerações finais</span>
+</div>
+<div class="text-truncate">
+<span>12m 15s</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="descricao" role="tabpanel" aria-labelledby="descricao-tab">
+<div class="mb-4">
+<h3 class="mb-2">Descrição do curso</h3>
+<p class="text-muted">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. 
+</p>
+<p class="text-muted">
+Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</div>
+</div>
+
+<div class="tab-pane fade" id="avaliacao" role="tabpanel" aria-labelledby="avaliacao-tab">
+<div class="mb-3">
+<h3 class="mb-4">O que dizem sobre este curso?</h3>
+<div class="row align-items-center">
+<div class="col-auto text-center">
+<h3 class="display-2 font-weight-bold roxo">4.5</h3>
+<i class="mdi mdi-star mr-n1 text-warning"></i>
+<i class="mdi mdi-star mr-n1 text-warning"></i>
+<i class="mdi mdi-star mr-n1 text-warning"></i>
+<i class="mdi mdi-star mr-n1 text-warning"></i>
+<i class="mdi mdi-star mr-n1-half text-warning"></i>
+<p class="mb-0 font-size-xs">(50 avaliações)</p>
+</div>
+<div class="col pt-3 order-3 order-md-2">
+<div class="progress mb-3" style="height: 6px;">
+<div class="progress-bar bg-warning" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-3" style="height: 6px;">
+<div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-3" style="height: 6px;">
+<div class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-3" style="height: 6px;">
+<div class="progress-bar bg-warning" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress mb-0" style="height: 6px;">
+<div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="col-md-auto col-6 order-2 order-md-3">
+<div>
+<span class="ml-1">53%</span>
+</div>
+<div>
+<span class="ml-1">36%</span>
+</div>
+<div>
+<span class="ml-1">9%</span>
+</div>
+<div>
+<span class="ml-1">3%</span>
+</div>
+<div>
+<span class="ml-1">2%</span>
+</div>
+</div>
+</div>
+</div>
+
+<hr class="my-5" />
+<div class="mb-3">
+<div class="d-lg-flex align-items-center justify-content-between mb-5">
+<div class="mb-3 mb-lg-0">
+<h3 class="mb-0 texto-escuro">Comentários sobre</h3>
+</div>
+<div>
+</div>
+</div>
+<div class="media border-bottom pb-4 mb-4">
+<img src="assets/nerd.png" alt="" class="rounded-circle avatar-lg" style="opacity: 0.7;" width="30" />
+<div class="media-body ml-3">
+<h4 class="mb-1 texto-escuro font-weight-bold" style="font-size: 15px;">Mestre dos nerds
+<span class="ml-1 roxo font-weight-bold" style="font-size: 13px;">postado há 1 dia atrás</span></h4>
+<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+</div>
+<div class="media border-bottom pb-4 mb-4">
+<img src="assets/nerd2.png" alt="" class="rounded-circle avatar-lg" style="opacity: 0.7;" width="30" />
+<div class="media-body ml-3">
+<h4 class="mb-1 texto-escuro font-weight-bold" style="font-size: 15px;">Pai dos nerds
+<span class="ml-1 roxo font-weight-bold" style="font-size: 13px;">postado há 10 dia atrás</span></h4>
+<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-12 col-12">
+<div class="card mb-3 mb-4">
+<div class="p-1">
+<div class="d-flex justify-content-center position-relative rounded py-10 border-white border rounded-lg">
+</div>
+</div>
+<div class="card-body">
+<center>
+<a href="#!" class="btn btn-roxo btn-block"  data-toggle="modal" data-target="#miModal">Iniciar curso</a>
+<a href="#" class="btn btn-branco btn-block">Quero me registrar!</a>
+</center>
+</div>
+</div>
+<div class="card mb-4">
+<div>
+<div class="card-header">
+<h4 class="mb-0">MENU</h4>
+</div>
+<ul class="list-group">
+<li class="list-group-item">Opção 1</li>
+<li class="list-group-item">Opção 2</li>
+<li class="list-group-item">Opção 3</li>
+<li class="list-group-item">Opção 4</li>
+<li class="list-group-item">Opção 5</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div class="modal fade text-center" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modal_login" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<form class="mt-4">
+<center>
+<img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">	
+<h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
+<div class="form-group col-xl-8">
+<input type="email" class="form-control login" placeholder="E-mail">
+</div>
+<div class="form-group col-xl-8">
+<input type="password" class="form-control login" placeholder="Senha">
+</div>
+<button type="submit" class="btn btn-entrar btn-block">Entrar</button>
+<a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
+</center>
+</form>
+</div>
+</div>
+</div>
+</div> 
+
+<footer class="py-5 bg-devlearn mt-5">
+<div class="container">
+<p class="m-0 text-center text-white footer">	
+<img class="img-fluid" width="100" src="assets/logo_footer.png">
+<br>
+2021 © <strong>devLearn</strong>. Todos os direitos reserados.
+<br>
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-facebook"></i>
+</button>	
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-twitter"></i>
+</button>	
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-youtube"></i>
+</button>	
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-instagram"></i>
+</button>	
+</p>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>

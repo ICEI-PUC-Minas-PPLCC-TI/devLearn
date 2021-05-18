@@ -17,7 +17,6 @@ Este _template_ adota a seguinte estrutura de diretórios:
   - `assets`
   - `scripts`
   - `styles`
-  - `vendor`
 
 > O grupo é livre para alterar a estrutura proposta. No entanto, nesse
 > caso, o arquivo `README.md` deve ser devidamente modificado para

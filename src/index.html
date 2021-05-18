@@ -56,7 +56,7 @@ Estude da <strong>maneira correta</strong>, com conteúdos<br>
 </p>
 <a href="#" class="btn btn-branco mb-3" data-toggle="modal" data-target="#miModal">Já tem uma conta?</a>
 <p class="ou">ou</p>
-<a href="#" class="btn btn-roxu">Registre-se!</a>
+<a href="cadastrar-usuarios.html" class="btn btn-roxu">Registre-se!</a>
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-12 text-lg-right text-center">
@@ -194,15 +194,15 @@ Entre em contato pelo e-mail abaixo:
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-body">
-<form class="mt-4">
+<form id="login-form" class="mt-4" onsubmit="loginUser(this)">
 <center>
 <img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">	
 <h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
 <div class="form-group col-xl-8">
-<input type="email" class="form-control login" placeholder="E-mail">
+<input type="email" class="form-control login" name="username" id="username" placeholder="E-mail">
 </div>
 <div class="form-group col-xl-8">
-<input type="password" class="form-control login" placeholder="Senha">
+<input type="password" class="form-control login" name="password" id="password" placeholder="Senha">
 </div>
 <button type="submit" class="btn btn-entrar btn-block">Entrar</button>
 <a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
@@ -235,6 +235,27 @@ Entre em contato pelo e-mail abaixo:
 </p>
 </div>
 </footer>
+
+<script src="./scripts/cadastrar-usuarios.js"></script>
+<script>
+        
+   function processaFormLogin (event) {                
+      event.preventDefault ();
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      resultadoLogin = loginUser (username, password);
+      if (resultadoLogin) {
+         window.location.href = 'index.html';
+         alert ('Login efetuado com sucesso');
+      }
+      else {
+         alert ('Usuário ou senha incorretos');
+      }
+   }
+   document.getElementById ('login-form').addEventListener ('submit', processaFormLogin);
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="scripts/scripts.js"></script>

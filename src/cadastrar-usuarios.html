@@ -63,7 +63,7 @@
                <input type="text" class="form-control cad" placeholder="Nome Completo" name="txt_nome" id="txt_nome" required="">
             </div>
             <div class="form-group">
-               <input type="text" class="form-control cad" placeholder="Nome de Usuário" name="txt_login" id="txt_login" required="">
+               <input type="email" class="form-control cad" placeholder="Email" name="txt_email" id="txt_email" required="">
             </div>
             <div class="form-group">
                <input type="text" class="form-control cad" placeholder="Senha" name="txt_senha" id="txt_senha" required="">
@@ -110,8 +110,8 @@
       event.preventDefault ();
 
       // Obtem os dados do formulário
-      let login  = document.getElementById('txt_login').value;
       let nome   = document.getElementById('txt_nome').value;
+      let email  = document.getElementById('txt_email').value;
       let senha  = document.getElementById('txt_senha').value;
       let senha2 = document.getElementById('txt_senha2').value;
       if (senha != senha2) {
@@ -120,8 +120,9 @@
       }
 
       // Adiciona o usuário no banco de dados
-      addUser (nome, login, senha);
+      addUser (nome, email, senha);
       alert ('Usuário salvo com sucesso. Proceda com o login para ');
+      window.location = "index.html";
    }
 
    // Associar salvamento ao botao

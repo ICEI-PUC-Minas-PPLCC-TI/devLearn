@@ -21,8 +21,8 @@ function generateUUID() {
 }
 const dadosIniciais = {
    usuarios: [
-      { "id": generateUUID (), "login": "admin", "senha": "123", "nome": "Administrador do Sistema"},
-      { "id": generateUUID (), "login": "user", "senha": "123", "nome": "Usuario Comum"},
+      { "id": generateUUID (), "email": "admin@example.com", "senha": "123", "nome": "Administrador do Sistema"},
+      { "id": generateUUID (), "email": "user@example.com", "senha": "123", "nome": "Usuario Comum"},
    ]
 };
 
@@ -43,24 +43,30 @@ function initLoginApp () {
    else  {
       db_usuarios = JSON.parse(usuariosJSON);    
    }
-};
-
-function logoutUser () {
-   usuarioCorrente = {};
-   sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-   window.location = LOGIN_URL;
 }
 
-function addUser (nome, login, senha) {
+function loginUser (email, senha) {
+   for (var i = 0; i < db_usuarios.usuarios.length; i++) {
+      var usuario = db_usuarios.usuarios[i];
+       
+      if (email == usuario.email && senha == usuario.senha) {
+         usuarioCorrente.id = usuario.id;
+         usuarioCorrente.email = usuario.email;
+         usuarioCorrente.nome = usuario.nome;
+         sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
+         return true;
+      }
+   }
+   return false;
+}
+
+function addUser (nome, email, senha) {
    let newId = generateUUID ();
-   let usuario = { "id": newId, "login": login, "senha": senha, "nome": nome};
+   let usuario = { "id": newId, "email": email, "senha": senha, "nome": nome};
     
    db_usuarios.usuarios.push (usuario);
 
    localStorage.setItem('db_usuarios', JSON.stringify (db_usuarios));
 }
 
-function setUserPass () {
-
-}
 initLoginApp ();

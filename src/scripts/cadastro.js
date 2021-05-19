@@ -58,12 +58,16 @@ function updateCurso(index, curso) {
   //  ...curso
   // }
 
-  (db.data.filter(id => index)[index - 1].titulo = curso.titulo),
-  (db.data.filter(id => index)[index - 1].nome = curso.nome),
-  (db.data.filter(id => index)[index - 1].idioma = curso.idioma),
-  (db.data.filter(id => index)[index - 1].conteudo = curso.conteudo),
-  (db.data.filter(id => index)[index - 1].tags = curso.tags);
+  let obj = db.data.find(o => o.id == index);
+  let pos = db.data.indexOf(obj);
+
+  (db.data.filter(id => index)[pos].titulo = curso.titulo),
+  (db.data.filter(id => index)[pos].nome = curso.nome),
+  (db.data.filter(id => index)[pos].idioma = curso.idioma),
+  (db.data.filter(id => index)[pos].conteudo = curso.conteudo),
+  (db.data.filter(id => index)[pos].tags = curso.tags);
   
+
   displayMessage("Curso alterado com sucesso");
 
   localStorage.setItem("db_curso", JSON.stringify(db));

@@ -6,7 +6,7 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "HTML",
-      tags: "Desenvolvimento WEB, HTML"
+      tags: "Desenvolvimento WEB, HTML",
     },
     {
       id: 2,
@@ -14,7 +14,7 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "CSS",
-      tags: "Desenvolvimento WEB, CSS"
+      tags: "Desenvolvimento WEB, CSS",
     },
     {
       id: 3,
@@ -22,7 +22,7 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "Javascript",
-      tags: "Desenvolvimento WEB, Javascript"
+      tags: "Desenvolvimento WEB, Javascript",
     },
   ],
 };
@@ -43,7 +43,7 @@ function insertCurso(curso) {
     nome: curso.nome,
     idioma: curso.idioma,
     conteudo: curso.conteudo,
-    tags: curso.tags
+    tags: curso.tags,
   };
 
   db.data.push(novoCurso);
@@ -53,20 +53,18 @@ function insertCurso(curso) {
 }
 
 function updateCurso(index, curso) {
-
   // db.data.filter(id => index)[index - 1] = {
   //  ...curso
   // }
 
-  let obj = db.data.find(o => o.id == index);
+  let obj = db.data.find((o) => o.id == index);
   let pos = db.data.indexOf(obj);
 
-  (db.data.filter(id => index)[pos].titulo = curso.titulo),
-  (db.data.filter(id => index)[pos].nome = curso.nome),
-  (db.data.filter(id => index)[pos].idioma = curso.idioma),
-  (db.data.filter(id => index)[pos].conteudo = curso.conteudo),
-  (db.data.filter(id => index)[pos].tags = curso.tags);
-  
+  (db.data.filter((id) => index)[pos].titulo = curso.titulo),
+    (db.data.filter((id) => index)[pos].nome = curso.nome),
+    (db.data.filter((id) => index)[pos].idioma = curso.idioma),
+    (db.data.filter((id) => index)[pos].conteudo = curso.conteudo),
+    (db.data.filter((id) => index)[pos].tags = curso.tags);
 
   displayMessage("Curso alterado com sucesso");
 
@@ -84,4 +82,3 @@ function deleteCurso(id) {
   // Atualiza os dados no Local Storage
   localStorage.setItem("db_curso", JSON.stringify(db));
 }
-

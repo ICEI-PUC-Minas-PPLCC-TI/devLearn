@@ -13,120 +13,161 @@
 </head>
 
 <body>
-   <div id="preloader">
-      <div class="inner">
-      <div class="bolas">
-      <div></div>
-      <div></div>
-      <div></div>                    
-      </div>
-   </div>
+<div id="preloader">
+<div class="inner">
+<div class="bolas">
+<div></div>
+<div></div>
+<div></div>                    
+</div>
+</div>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
-   <div class="container">
-      <a class="navbar-brand" href="index.html">
-         <img src="assets/logo.png" width="130">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-               <a class="nav-link" href="#!">
-               <button class="btn btn-roxo">MEU PERFIL</button>
-               </a>
-            </li>
-         </ul>
-      </div>
-   </div>
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img src="assets/logo.png" width="130">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="#!">
+<button class="btn btn-roxo" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
+</a>
+</li>
+</ul>
+</div>
+</div>
 </nav>
 
 <div class="row">
-   <div class="col-xl-6 col-lg-6 col-md-12">
-      <div class="mb-4 mb-xl-0 text-center text-md-left">
-         <h1 class="display-4 font-weight-bold mb-3 text-white ls-sm m-5"><i>Cadastro de <strong class="roxo">Usuários</strong></i></h1>
-         <p class="mb-4 lead text-white-50 m-5">
-         Seja bem-vindo a página de cadastro de usuários em nossa plataforma.
-         <br><strong>Preencha os campos ao lado.</strong> 
-      </p>
-   </div>
+<div class="col-xl-6 col-lg-6 col-md-12">
+<div class="mb-4 mb-xl-0 text-center text-md-left">
+<h1 class="display-4 font-weight-bold mb-3 text-white ls-sm m-5"><i>Cadastro de <strong class="roxo">Usuários</strong></i></h1>
+<p class="mb-4 lead text-white-50 m-5">
+Seja bem-vindo a página de cadastro de usuários em nossa plataforma.
+<br><strong>Preencha os campos ao lado.</strong> 
+</p>
+</div>
 </div>
 
 <div class="offset-xl-1 col-xl-5 col-lg-6 col-md-12">
-   <div class="card m-5" style="z-index: 1;">
-      <div class="card-body p-6">
-      <div class="mb-4">
-      <h1 class="mb-4 lh-1 font-weight-bold h2">Cadastro de Usuários</h1>
-      </div>
-         <form action="#">
-            <div class="form-group">
-               <input type="text" class="form-control cad" placeholder="Nome Completo" name="txt_nome" id="txt_nome" required="">
-            </div>
-            <div class="form-group">
-               <input type="email" class="form-control cad" placeholder="Email" name="txt_email" id="txt_email" required="">
-            </div>
-            <div class="form-group">
-               <input type="text" class="form-control cad" placeholder="Senha" name="txt_senha" id="txt_senha" required="">
-            </div>
-            <div class="form-group">
-               <input type="text" class="form-control cad" placeholder="Confirmação de Senha" name="txt_senha2" id="txt_senha2" required="">
-            </div>
-            <div class="cadastrar-usuarios-space"></div>
-         <button type="submit" id="btn_salvar" class="btn btn-primary btn-block mb-3"><i class="fas fa-plus"></i> Cadastrar</button>
-         </form>
-      </div>
-   </div>
+<div class="card m-5" style="z-index: 1;">
+<div class="card-body p-6">
+<div class="mb-4">
+<h1 class="mb-4 lh-1 font-weight-bold h2">Cadastro de Usuários</h1>
+</div>
+<form action="#">
+<div class="form-group">
+<input type="text" class="form-control cad" placeholder="Nome Completo" name="txt_nome" id="txt_nome" required="">
+</div>
+<div class="form-group">
+<input type="email" class="form-control cad" placeholder="Email" name="txt_email" id="txt_email" required="">
+</div>
+<div class="form-group">
+<input type="text" class="form-control cad" placeholder="Senha" name="txt_senha" id="txt_senha" required="">
+</div>
+<div class="form-group">
+<input type="text" class="form-control cad" placeholder="Confirmação de Senha" name="txt_senha2" id="txt_senha2" required="">
+</div>
+<div class="cadastrar-usuarios-space"></div>
+<button type="submit" id="btn_salvar" class="btn btn-primary btn-block mb-3"><i class="fas fa-plus"></i> Cadastrar</button>
+</form>
+</div>
+</div>
 </div>
 
+</div>
+
+<div class="modal fade text-center" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modal_login" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<form id="login-form" class="mt-4" onsubmit="loginUser(this)">
+<center>
+<img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">	
+<h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
+<div class="form-group col-xl-8">
+<input type="email" class="form-control login" name="username" id="username" placeholder="E-mail">
+</div>
+<div class="form-group col-xl-8">
+<input type="password" class="form-control login" name="password" id="password" placeholder="Senha">
+</div>
+<button type="submit" class="btn btn-entrar btn-block">Entrar</button>
+<a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
+</center>
+</form>
+</div>
+</div>
+</div>
 </div>
 
 <footer class="py-5 bg-devlearn mt-5">
-   <div class="container">
-      <p class="m-0 text-center text-white footer">	
-         <img class="img-fluid" width="100" src="assets/logo_footer.png">
-         <br>
-         2021 © <strong>devLearn</strong>. Todos os direitos reserados.
-         <br>
-         <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-            <i class="fab fa-facebook"></i>
-         </button>	
-         <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-            <i class="fab fa-twitter"></i>
-         </button>	
-         <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-            <i class="fab fa-youtube"></i>
-         </button>	
-         <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-            <i class="fab fa-instagram"></i>
-         </button>	
-      </p>
-   </div>
+<div class="container">
+<p class="m-0 text-center text-white footer">	
+<img class="img-fluid" width="100" src="assets/logo_footer.png">
+<br>
+2021 © <strong>devLearn</strong>. Todos os direitos reserados.
+<br>
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-facebook"></i>
+</button>	
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-twitter"></i>
+</button>	
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-youtube"></i>
+</button>	
+<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+<i class="fab fa-instagram"></i>
+</button>	
+</p>
+</div>
 </footer>
 
 <script src="./scripts/cadastrar-usuarios.js"></script>
 <script>
-   function salvaLogin (event) {
-      // Cancela a submissão do formulário para tratar sem fazer refresh da tela
-      event.preventDefault ();
+function salvaLogin (event) {
+// Cancela a submissão do formulário para tratar sem fazer refresh da tela
+event.preventDefault ();
 
-      // Obtem os dados do formulário
-      let nome   = document.getElementById('txt_nome').value;
-      let email  = document.getElementById('txt_email').value;
-      let senha  = document.getElementById('txt_senha').value;
-      let senha2 = document.getElementById('txt_senha2').value;
-      if (senha != senha2) {
-         alert ('As senhas informadas não conferem.');
-         return
-      }
+// Obtem os dados do formulário
+let nome   = document.getElementById('txt_nome').value;
+let email  = document.getElementById('txt_email').value;
+let senha  = document.getElementById('txt_senha').value;
+let senha2 = document.getElementById('txt_senha2').value;
+if (senha != senha2) {
+alert ('As senhas informadas não conferem.');
+return
+}
 
-      // Adiciona o usuário no banco de dados
-      addUser (nome, email, senha);
-      alert ('Usuário salvo com sucesso. Proceda com o login para ');
-      window.location = "index.html";
-   }
+// Adiciona o usuário no banco de dados
+addUser (nome, email, senha);
+alert ('Usuário salvo com sucesso. Proceda com o login para ');
+window.location = "index.html";
+}
 
-   // Associar salvamento ao botao
-   document.getElementById ('btn_salvar').addEventListener ('click', salvaLogin);        
+// Associar salvamento ao botao
+document.getElementById ('btn_salvar').addEventListener ('click', salvaLogin);        
+
+
+function processaFormLogin (event) {                
+event.preventDefault ();
+
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
+
+resultadoLogin = loginUser (username, password);
+if (resultadoLogin) {
+window.location.href = 'index-logado.html';
+alert ('Login efetuado com sucesso');
+}
+else {
+alert ('Usuário ou senha incorretos');
+}
+}
+document.getElementById ('login-form').addEventListener ('submit', processaFormLogin);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>

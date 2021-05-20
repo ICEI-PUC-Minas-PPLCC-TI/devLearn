@@ -52,6 +52,11 @@
       <div class="row align-items-center no-gutters">
         <div class="col-xl-6 col-lg-6 col-md-12">
           <div class="py-5 py-lg-0">
+            <table cellpadding="0" cellspacing="0" border="0" id="grid-pesquisa">
+              <tbody id="table-cursos">
+              
+              </tbody>
+              </table>
             <h5 class="text-white display-4 titulo-roxo mt-4" style="font-size: 35px;">
               <span style="color: #472d87">resultado da pesquisa:</span>
               <br>
@@ -347,6 +352,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/scripts.js"></script>
+    <script src="scripts/busca.js"></script>
+    <script>
+      let obj = JSON.parse(localStorage.getItem("obj_curso"));
+      console.log("DEBUG: PESQUISA.HTML VALOR OBJ", obj);
+      if (!obj) {
+        console.log("ERRO: OBJ VAZIO");
+      } else {
+        console.log("DEBUG: ", obj)
+        const Id = obj.id;
+        const Titulo = obj.titulo;
+        const Nome = obj.nome;
+        const Idioma = obj.idioma;
+        const Conteudo = obj.conteudo;
+        const Tags = obj.tags;
+
+        $("#table-cursos").append(`<td>${Titulo}</td>
+                                <td>${Nome}</td>
+                                <td>${Idioma}</td>
+                                <td>${Conteudo}</td>
+                                <td>${Tags}</td>
+                                </tr>`);
+      }
+    </script>
 </body>
 
 </html>

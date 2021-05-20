@@ -35,7 +35,7 @@
 
 /* Espaço em branco cadastro de usuários */
 .cadastrar-usuarios-space {
-   min-height: 5.2rem;
+min-height: 5.2rem;
 }
 
 *,
@@ -10400,4 +10400,87 @@ color: #754ffe;
 .nav-pills .show > .nav-link {
 color: #fff;
 background-color: #007bff;
+}
+
+
+table{
+width:100%;
+table-layout: fixed;
+}
+.tbl-header{
+background-color: rgba(255,255,255,0.3);
+}
+.tbl-content{
+height:300px;
+overflow-x:auto;
+margin-top: 0px;
+border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+padding: 20px 15px;
+text-align: left;
+font-weight: 500;
+font-size: 12px;
+color: #fff;
+text-transform: uppercase;
+}
+td{
+padding: 15px;
+text-align: left;
+vertical-align:middle;
+font-weight: 300;
+font-size: 12px;
+color: #fff;
+border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+::-webkit-scrollbar {
+width: 6px;
+} 
+::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+@media (max-width: 767px) {
+
+.table-responsive {
+display: block;
+position: relative;
+width: 100%;
+}
+
+.table-responsive thead,
+.table-responsive tbody,
+.table-responsive th,
+.table-responsive td,
+.table-responsive tr {
+display: block;
+}
+
+.table-responsive td,
+.table-responsive th {
+height: 35px;
+}
+
+.table-responsive thead {
+float: left;
+}
+
+.table-responsive tbody {
+width: auto;
+position: relative;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+white-space: nowrap;
+}
+
+.table-responsive tbody tr {
+display: inline-block;
+}
+
 }

@@ -11,10 +11,3 @@ $(window).on("load resize ", function() {
 var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
 $('.tbl-header').css({'padding-right':scrollWidth});
 }).resize();
-=======
-$(window).on("load", function () {
-  $("#preloader .inner").fadeOut();
-  $("#preloader").delay(200).fadeOut("slow");
-  $("body").delay(200).css({ overflow: "visible" });
-});
->>>>>>> 59d0675684bb0b56aecaacb93880df5082ff1b05

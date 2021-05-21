@@ -6,7 +6,8 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "HTML",
-      tags: "Desenvolvimento WEB, HTML",
+      tags: "WEB, HTML",
+      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-html",
     },
     {
       id: 2,
@@ -14,7 +15,8 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "CSS",
-      tags: "Desenvolvimento WEB, CSS",
+      tags: "WEB, CSS",
+      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-css",
     },
     {
       id: 3,
@@ -22,7 +24,8 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "Javascript",
-      tags: "Desenvolvimento WEB, Javascript",
+      tags: "WEB, Javascript",
+      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-java-script",
     },
   ],
 };
@@ -44,6 +47,7 @@ function insertCurso(curso) {
     idioma: curso.idioma,
     conteudo: curso.conteudo,
     tags: curso.tags,
+    url: curso.url,
   };
 
   db.data.push(novoCurso);
@@ -65,6 +69,7 @@ function updateCurso(index, curso) {
     (db.data.filter((id) => index)[pos].idioma = curso.idioma),
     (db.data.filter((id) => index)[pos].conteudo = curso.conteudo),
     (db.data.filter((id) => index)[pos].tags = curso.tags);
+    (db.data.filter((id) => index)[pos].url = curso.url);
 
   displayMessage("Curso alterado com sucesso");
 

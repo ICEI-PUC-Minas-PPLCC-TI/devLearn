@@ -258,16 +258,18 @@
       </div>
    </footer>
 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="scripts/scripts.js"></script>
    <script src="./scripts/cadastrar-usuarios.js"></script>
+   <script src="scripts/busca.js"></script>
    <script>
-
       var busca = document.getElementById("#busca_2");
       function buscarCurso(busca) {
-        console.log("DEBUG: FUNCAO buscarCurso: ", busca);
-        let obj = db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase());
-        localStorage.setItem("obj_curso", JSON.stringify(obj));
+         console.log("DEBUG: FUNCAO buscarCurso: ", busca);
+         let obj = db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase());
+         localStorage.setItem("obj_curso", JSON.stringify(obj));
       }
-      
+
       function processaFormLogin(event) {
          event.preventDefault();
 
@@ -285,10 +287,6 @@
       }
       document.getElementById('login-form').addEventListener('submit', processaFormLogin);
    </script>
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="scripts/scripts.js"></script>
-   <script src="scripts/busca.js"></script>
 </body>
 
 </html>

@@ -360,28 +360,6 @@
     <script src="scripts/scripts.js"></script>
     <script src="scripts/busca.js"></script>
     <script>
-      function carregarTable() {
-        let obj = JSON.parse(localStorage.getItem("obj_curso"));
-        if (!obj) {
-          console.log("ERRO: OBJ VAZIO");
-        } else {
-          console.log("DEBUG: ", obj)
-          for (i = 0; i < obj.data.length; i++) {
-            let resultado = obj.data[i];
-            $("#table-cursos").append(`<tr><td scope="row">${resultado.id}</td>
-            <td>${resultado.titulo}</td>
-            <td>${resultado.nome}</td>
-            <td>${resultado.idioma}</td>
-            <td>${resultado.conteudo}</td>
-            <td>${resultado.tags}</td>
-            <td>${resultado.url}</td>
-            </tr>`);
-          }
-        }
-      }
-
-
-
       function processaFormLogin(event) {
         event.preventDefault();
 

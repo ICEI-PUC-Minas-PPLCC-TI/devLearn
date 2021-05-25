@@ -6,7 +6,7 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "HTML",
-      tags: "WEB, HTML",
+      tags: "WEB",
       url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-html",
     },
     {
@@ -15,7 +15,7 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "CSS",
-      tags: "WEB, CSS",
+      tags: "WEB",
       url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-css",
     },
     {
@@ -24,8 +24,17 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "Javascript",
-      tags: "WEB, Javascript",
+      tags: "WEB",
       url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-java-script",
+    },
+    {
+      id: 4,
+      titulo: "HTML que faz sentido, para todos",
+      nome: "Rocketseat",
+      idioma: "PT",
+      conteudo: "HTML",
+      tags: "WEB",
+      url: "https://app.rocketseat.com.br/node/html-que-faz-sentido-para-todos",
     },
   ],
 };

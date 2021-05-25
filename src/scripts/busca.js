@@ -6,7 +6,7 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "HTML",
-      tags: "WEB, HTML",
+      tags: "WEB",
       url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-html",
     },
     {
@@ -15,7 +15,7 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "CSS",
-      tags: "WEB, CSS",
+      tags: "WEB",
       url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-css",
     },
     {
@@ -24,17 +24,17 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "Javascript",
-      tags: "WEB, Javascript",
+      tags: "WEB",
       url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-java-script",
     },
     {
-      id: 1,
-      titulo: "O SEGUNDO guia estelar de HTML",
+      id: 4,
+      titulo: "HTML que faz sentido, para todos",
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "HTML",
-      tags: "WEB, HTML",
-      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-html",
+      tags: "WEB",
+      url: "https://app.rocketseat.com.br/node/html-que-faz-sentido-para-todos",
     },
   ],
 };
@@ -46,7 +46,7 @@ if (!db) {
 
 function buscarCurso() {
   const busca = $("#busca-1").val();
-  console.log("DEBUG: FUNCAO buscarCurso: ", busca);
+  // console.log("DEBUG: FUNCAO buscarCurso: ", busca);
   /* let obj = JSON.parse(localStorage.getItem("obj_curso"));
   if (!obj) {
     obj = {
@@ -67,9 +67,32 @@ function buscarCurso() {
       obj.data.push(db.data[i]);
     } 
     localStorage.setItem("obj_curso", JSON.stringify(obj));
-    console.log("DEBUG: OBJ ", obj);
+    // console.log("DEBUG: OBJ ", obj);
   }
   
+}
+
+function carregarTable() {
+  let obj = JSON.parse(localStorage.getItem("obj_curso"));
+  if (!obj) {
+    console.log("ERRO: OBJ VAZIO");
+  } else {
+    console.log("DEBUG (carregarTable()): ", obj)
+    if (!obj.data.length) {
+      window.location.href = "erro.html";
+    }
+    for (i = 0; i < obj.data.length; i++) {
+      let resultado = obj.data[i];
+      $("#table-cursos").append(`<tr><td scope="row">${resultado.id}</td>
+      <td>${resultado.titulo}</td>
+      <td>${resultado.nome}</td>
+      <td>${resultado.idioma}</td>
+      <td>${resultado.conteudo}</td>
+      <td>${resultado.tags}</td>
+      <td>${resultado.url}</td>
+      </tr>`);
+    }
+  }
 }
 
 // busca.addEventListener("keyup", (e) => {

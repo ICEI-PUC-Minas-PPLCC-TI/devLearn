@@ -11,31 +11,9 @@
   <link href="styles/style.css" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-  <script>
-    let obj = JSON.parse(localStorage.getItem("obj_curso"));
-    console.log("DEBUG: PESQUISA.HTML VALOR OBJ", obj);
-    if (!obj) {
-      console.log("ERRO: OBJ VAZIO");
-    } else {
-      console.log("DEBUG: ", obj)
-      const Id = obj.id;
-      const Titulo = obj.titulo;
-      const Nome = obj.nome;
-      const Idioma = obj.idioma;
-      const Conteudo = obj.conteudo;
-      const Tags = obj.tags;
-
-      $("#table-cursos").append(`<td>${Titulo}</td>
-<td>${Nome}</td>
-<td>${Idioma}</td>
-<td>${Conteudo}</td>
-<td>${Tags}</td>
-</tr>`);
-    }
-  </script>
 </head>
 
-<body>
+<body onload="carregarTable()">
   <div id="preloader">
     <div class="inner">
       <div class="bolas">
@@ -74,11 +52,6 @@
       <div class="row align-items-center no-gutters">
         <div class="col-xl-6 col-lg-6 col-md-12">
           <div class="py-5 py-lg-0">
-            <!-- <table cellpadding="0" cellspacing="0" border="0" id="grid-pesquisa">
-<tbody id="table-cursos">
-
-</tbody>
-</table> -->
             <h5 class="text-white display-4 titulo-roxo mt-4" style="font-size: 35px;">
               <span style="color: #472d87">Resultado da pesquisa:</span>
               <br>
@@ -86,16 +59,18 @@
               <div id="grid-pesquisa">
                 <span id="Titulo"></span>
               </div>
+              
 
             </h5>
-            <p class="mb-4 text-white">
+            
+            <!-- <p class="mb-4 text-white">
               <i>Python é uma linguagem de programação de alto nível, interpretada de script, imperativa, orientada a
                 objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991.</i>
             </p>
             <p class="mb-4 text-white">
               <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
               <span style="font-size: 15px">★★★★☆</span>
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
@@ -106,7 +81,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-12 col-12 mt-n8 mb-4 mb-lg-0">
-          <img src="assets/img-video.png" class="img-fluid mb-4">
+          <table cellpadding="0" cellspacing="0" border="0" id="grid-pesquisa">
+            <tbody id="table-cursos">
+
+            </tbody>
+          </table>
+          <!-- <img src="assets/img-video.png" class="img-fluid mb-4">
           <div class="card rounded-lg">
             <div class="card-header border-bottom-0 p-0">
               <div>
@@ -293,10 +273,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
-        <div class="col-lg-4 col-md-12 col-12">
+        <!-- <div class="col-lg-4 col-md-12 col-12">
           <div class="card mb-3 mb-4">
             <div class="p-1">
               <div class="d-flex justify-content-center position-relative rounded py-10 border-white border rounded-lg">
@@ -324,7 +304,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -380,12 +360,27 @@
     <script src="scripts/scripts.js"></script>
     <script src="scripts/busca.js"></script>
     <script>
-      var busca = document.getElementById("#busca_2");
-      function buscarCurso(busca) {
-        console.log("DEBUG: FUNCAO buscarCurso: ", busca);
-        let obj = db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase());
-        localStorage.setItem("obj_curso", JSON.stringify(obj));
+      function carregarTable() {
+        let obj = JSON.parse(localStorage.getItem("obj_curso"));
+        if (!obj) {
+          console.log("ERRO: OBJ VAZIO");
+        } else {
+          console.log("DEBUG: ", obj)
+          for (i = 0; i < obj.data.length; i++) {
+            let resultado = obj.data[i];
+            $("#table-cursos").append(`<tr><td scope="row">${resultado.id}</td>
+            <td>${resultado.titulo}</td>
+            <td>${resultado.nome}</td>
+            <td>${resultado.idioma}</td>
+            <td>${resultado.conteudo}</td>
+            <td>${resultado.tags}</td>
+            <td>${resultado.url}</td>
+            </tr>`);
+          }
+        }
       }
+
+
 
       function processaFormLogin(event) {
         event.preventDefault();

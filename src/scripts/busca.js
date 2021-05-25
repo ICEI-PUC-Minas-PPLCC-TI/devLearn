@@ -6,7 +6,8 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "HTML",
-      tags: "Desenvolvimento WEB, HTML",
+      tags: "WEB, HTML",
+      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-html",
     },
     {
       id: 2,
@@ -14,7 +15,8 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "CSS",
-      tags: "Desenvolvimento WEB, CSS",
+      tags: "WEB, CSS",
+      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-css",
     },
     {
       id: 3,
@@ -22,7 +24,17 @@ var db_cursos_iniciais = {
       nome: "Rocketseat",
       idioma: "PT",
       conteudo: "Javascript",
-      tags: "Desenvolvimento WEB, Javascript",
+      tags: "WEB, Javascript",
+      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-java-script",
+    },
+    {
+      id: 1,
+      titulo: "O SEGUNDO guia estelar de HTML",
+      nome: "Rocketseat",
+      idioma: "PT",
+      conteudo: "HTML",
+      tags: "WEB, HTML",
+      url: "https://app.rocketseat.com.br/node/o-guia-estelar-de-html",
     },
   ],
 };
@@ -35,9 +47,29 @@ if (!db) {
 function buscarCurso() {
   const busca = $("#busca-1").val();
   console.log("DEBUG: FUNCAO buscarCurso: ", busca);
-  let obj = db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase());
-  localStorage.setItem("obj_curso", JSON.stringify(obj));
-  console.log("DEBUG: OBJ ", obj);
+  /* let obj = JSON.parse(localStorage.getItem("obj_curso"));
+  if (!obj) {
+    obj = {
+      data: [],
+    }
+  } */
+  let obj = {
+    data: [],
+  }
+  for (i = 0; i < db.data.length; i++) {
+    // obj.data.push(db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase()));
+    if (busca.toLowerCase() == db.data[i].titulo.toLowerCase() ||
+        busca.toLowerCase() == db.data[i].nome.toLowerCase() ||
+        busca.toLowerCase() == db.data[i].idioma.toLowerCase() ||
+        busca.toLowerCase() == db.data[i].conteudo.toLowerCase() ||
+        busca.toLowerCase() == db.data[i].tags.toLowerCase() ||
+        busca.toLowerCase() == db.data[i].url.toLowerCase()) {
+      obj.data.push(db.data[i]);
+    } 
+    localStorage.setItem("obj_curso", JSON.stringify(obj));
+    console.log("DEBUG: OBJ ", obj);
+  }
+  
 }
 
 // busca.addEventListener("keyup", (e) => {

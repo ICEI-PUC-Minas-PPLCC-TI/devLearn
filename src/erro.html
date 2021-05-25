@@ -146,13 +146,7 @@
    <script src="scripts/scripts.js"></script>
    <script src="scripts/busca.js"></script>
 
-   <script> var busca = document.getElementById("#busca_2");
-      function buscarCurso(busca) {
-         console.log("DEBUG: FUNCAO buscarCurso: ", busca);
-         let obj = db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase());
-         localStorage.setItem("obj_curso", JSON.stringify(obj));
-      }
-
+   <script>
       function processaFormLogin(event) {
          event.preventDefault();
 

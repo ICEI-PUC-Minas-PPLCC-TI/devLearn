@@ -1,58 +1,49 @@
-var db_desafios = {
+const db_desafios = {
    data: [
       {
          id: 1,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem1",
+         text: "lorem1",
       },
       {
          id: 2,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem2",
+         text: "lorem2",
       },
       {
          id: 3,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem3",
+         text: "lorem3",
       },
       {
          id: 4,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem4",
+         text: "lorem4",
       },
       {
          id: 5,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem5",
+         text: "lorem5",
       },
       {
          id: 6,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem6",
+         text: "lorem6",
       },
       {
          id: 7,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem7",
+         text: "lorem7",
       },
       {
          id: 8,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem8",
+         text: "lorem8",
       },
       {
          id: 9,
-         name: "",
-         text: "",
-         answer: 1,
+         title: "lorem9",
+         text: "lorem9",
       },
    ]
 }
@@ -61,22 +52,26 @@ var db = JSON.parse(localStorage.getItem("db_desafios"));
 if (!db) {
   db = db_desafios;
   localStorage.setItem("db_desafios", JSON.stringify(db));
-} else {
-   db_desafios = db;
 }
 
 function randomNumber() {
-   max = Math.floor(1);
-   min = Math.ceil(9);
+   let max = Math.floor(1);
+   let min = Math.ceil(9);
    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-$("#btn_desafios").click(() => {
+function carregarCurso() {
    var seletor = randomNumber();
-
-})
-
-console.log(randomNumber());
+   var desafioSelect = db_desafios.data[seletor - 1];
+   console.log("db_desafios ", db_desafios.data[seletor - 1]);
+   console.log("seletor ", seletor);
+   console.log("desafioSelect ", desafioSelect);
+   $("#desafios").html(`<div>
+   <h1>${desafioSelect.title}</h1>
+   <p>${desafioSelect.text}</p>
+   </div>`
+      );
+}
 
 function desafioCorrente() {
 

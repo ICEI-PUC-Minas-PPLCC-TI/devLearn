@@ -35,6 +35,41 @@
             </tr>`);
       }
    </script>
+   <style>
+      .desafios_page h1 {
+         margin-top: 3rem;
+      }
+      .espacamento {
+         margin-bottom: 24rem;
+      }
+      .desafios_corpo {
+         margin: 8rem 0rem;
+      }
+      .desafio {
+         margin-left: 10.2rem;
+      }
+      .desafio_title {
+         font-size: 4rem;
+         margin: 4rem 0px;
+      }
+      .desafio_para {
+         font-size: 1.25rem;
+      }
+      .answer {
+         margin: 3rem 0rem;
+         padding: 0.5rem;
+         width: 100%;
+         border: none;
+      }
+      .desafio_answer {
+         font-size: 16px;
+         color: white;
+         margin: 20px 10px 16px;
+         padding: 6px 12px;
+         width: 100%;
+         border: 3px solid #8157E6;
+      }
+   </style>
 </head>
 
 <body>
@@ -71,18 +106,23 @@
       </div>
    </nav>
 
-
-   <div class="estrela">
+   <div class="desafios_page">
       <div>
-         <center id="desafios">
-            
-         </center>
-      </div>
-      <div class="corpo">
          <center>
-            <button class="btn btn-roxo mt-4" id="btn_novo_desafio" onclick="carregarCurso()">Novo desafio</button>
+            <h1 style="font-size: 4rem;">
+               Desafios
+            </h1>
          </center>
       </div>
+      <div id="desafios">
+
+      </div>
+      <div class="desafios_corpo">
+         <center>
+            <button class="btn btn-roxo" id="btn_novo_desafio" onclick="carregarCurso()">Novo desafio</button>
+         </center>
+      </div>
+      <div class="espacamento"></div>
    </div>
 
    <footer class="py-5 bg-devlearn mt-5">

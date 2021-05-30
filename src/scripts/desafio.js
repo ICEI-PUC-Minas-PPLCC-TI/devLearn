@@ -100,9 +100,7 @@ function randomNumber() {
 function carregarCurso() {
    var seletor = randomNumber();
    var desafioSelect = db_desafios.data[seletor - 1];
-   console.log("db_desafios ", db_desafios.data[seletor - 1]);
    console.log("seletor ", seletor);
-   console.log("desafioSelect ", desafioSelect);
    $("#desafios").html(`
    <div class="desafio">
    <h1 class="desafio_title">${desafioSelect.title}</h1>

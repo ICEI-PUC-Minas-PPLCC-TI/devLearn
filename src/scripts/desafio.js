@@ -121,9 +121,3 @@ function mostrarResposta() {
    $("#desafio_answer").prop("style", "block");
    $("#desafio").hide();
 }
-
-
-
-function desafioCorrente() {
-
-}

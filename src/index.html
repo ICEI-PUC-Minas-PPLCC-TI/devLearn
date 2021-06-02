@@ -12,6 +12,7 @@
    <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
    <script src="/src/scripts/desafio.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -264,23 +265,46 @@
    <script src="./scripts/cadastrar-usuarios.js"></script>
    <script src="scripts/busca.js"></script>
    <script>
-      function processaFormLogin(event) {
-         event.preventDefault();
+function processaFormLogin(event) {
+event.preventDefault();
 
-         var username = document.getElementById('username').value;
-         var password = document.getElementById('password').value;
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
 
-         resultadoLogin = loginUser(username, password);
-         if (resultadoLogin) {
-            window.location.href = 'index-logado.html';
-            alert('Login efetuado com sucesso');
-         }
-         else {
-            alert('Usuário ou senha incorretos');
-         }
-      }
-      document.getElementById('login-form').addEventListener('submit', processaFormLogin);
-   </script>
+resultadoLogin = loginUser(username, password);
+if (resultadoLogin) {
+setTimeout(function() {
+window.location.href = "index-logado.html";
+}, 2000);
+
+let timerInterval
+Swal.fire({
+title: 'Bem-vindo de volta usuário!',
+html: 'Você será redirecionado...',
+timer: 2000,
+timerProgressBar: true,
+didOpen: () => {
+Swal.showLoading()
+timerInterval = setInterval(() => {
+const content = Swal.getHtmlContainer()
+}, 100)
+},
+willClose: () => {
+clearInterval(timerInterval)
+}
+}).then((result) => {
+})
+
+}else {
+Swal.fire({
+icon: 'error',
+title: 'Ops!',
+text: 'E-mail ou senha incorretos.',
+})
+}
+}
+document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+</script>
 </body>
 
 </html>

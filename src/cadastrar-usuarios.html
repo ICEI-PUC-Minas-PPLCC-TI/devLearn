@@ -133,31 +133,56 @@
         <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
           <i class="fab fa-instagram"></i>
         </button>
-      </p>
-    </div>
-  </footer>
+</p>
+</div>
+</footer>
 
-  <script src="./scripts/cadastrar-usuarios.js"></script>
-  <script>
-    function salvaLogin(event) {
-      // Cancela a submissão do formulário para tratar sem fazer refresh da tela
-      event.preventDefault();
+<script src="./scripts/cadastrar-usuarios.js"></script>
+<script>
+function salvaLogin(event) {
+// Cancela a submissão do formulário para tratar sem fazer refresh da tela
+event.preventDefault();
 
-      // Obtem os dados do formulário
-      let nome = document.getElementById('txt_nome').value;
-      let email = document.getElementById('txt_email').value;
-      let senha = document.getElementById('txt_senha').value;
-      let senha2 = document.getElementById('txt_senha2').value;
-      if (senha != senha2) {
-        alert('As senhas informadas não conferem.');
-        return
-      }
+// Obtem os dados do formulário
+let nome = document.getElementById('txt_nome').value;
+let email = document.getElementById('txt_email').value;
+let senha = document.getElementById('txt_senha').value;
+let senha2 = document.getElementById('txt_senha2').value;
+if (senha != senha2) {
+Swal.fire({
+icon: 'error',
+title: 'Não foi possível cadastrar!',
+text: 'Digite seus dados corretamente.',
+})
+return
+}
 
-      // Adiciona o usuário no banco de dados
-      addUser(nome, email, senha);
-      alert('Usuário salvo com sucesso. Proceda com o login para ');
-      window.location = "index.html";
-    }
+// Adiciona o usuário no banco de dados
+addUser(nome, email, senha);
+
+setTimeout(function() {
+window.location.href = "index.html";
+}, 2000);
+
+let timerInterval
+Swal.fire({
+title: 'Sucesso!',
+html: 'O cadastro foi realizado com sucesso! Redirecionando...',
+timer: 2000,
+timerProgressBar: true,
+didOpen: () => {
+Swal.showLoading()
+timerInterval = setInterval(() => {
+const content = Swal.getHtmlContainer()
+}, 100)
+},
+willClose: () => {
+clearInterval(timerInterval)
+}
+}).then((result) => {
+})
+
+}
 
     // Associar salvamento ao botao
     document.getElementById('btn_salvar').addEventListener('click', salvaLogin);

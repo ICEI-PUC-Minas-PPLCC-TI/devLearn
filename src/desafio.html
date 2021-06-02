@@ -96,7 +96,7 @@
             <ul class="navbar-nav ml-auto">
                <li class="nav-item">
                   <a class="nav-link" href="#!">
-                     <button class="btn btn-roxo" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
+                     <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
                   </a>
                </li>
             </ul>
@@ -108,10 +108,10 @@
    </nav>
 
    <div class="desafios_page">
-      <div>
+      <div style="opacity: 0;">
          <center>
-            <h1 style="font-size: 4rem;">
-               Desafios
+            <h1>
+              <span style="background-color: #8157E6; font-size: 18px; border-radius: 20px; padding: 10px;"> Desafios</span>
             </h1>
          </center>
       </div>
@@ -120,7 +120,7 @@
       </div>
       <div class="desafios_corpo">
          <center>
-            <button class="btn btn-roxo" id="btn_novo_desafio" onclick="carregarCurso()">Novo desafio</button>
+            <button class="btn btn-roxo glow-roxo" id="btn_novo_desafio" onclick="carregarCurso()">Iniciar um desafio</button>
          </center>
       </div>
       <div class="espacamento"></div>
@@ -180,23 +180,48 @@
    <script src="scripts/busca.js"></script>
    <script src="scripts/desafio.js"></script>
 
-   <script>
-      function processaFormLogin(event) {
-         event.preventDefault();
+<script src="./scripts/cadastrar-usuarios.js"></script>
+<script>
+function processaFormLogin(event) {
+event.preventDefault();
 
-         var username = document.getElementById('username').value;
-         var password = document.getElementById('password').value;
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
 
-         resultadoLogin = loginUser(username, password);
-         if (resultadoLogin) {
-            window.location.href = 'index-logado.html';
-            alert('Login efetuado com sucesso');
-         }
-         else {
-            alert('Usuário ou senha incorretos');
-         }
-      }
-      document.getElementById('login-form').addEventListener('submit', processaFormLogin);</script>
+resultadoLogin = loginUser(username, password);
+if (resultadoLogin) {
+setTimeout(function() {
+window.location.href = "index-logado.html";
+}, 2000);
+
+let timerInterval
+Swal.fire({
+title: 'Bem-vindo de volta usuário!',
+html: 'Você será redirecionado...',
+timer: 2000,
+timerProgressBar: true,
+didOpen: () => {
+Swal.showLoading()
+timerInterval = setInterval(() => {
+const content = Swal.getHtmlContainer()
+}, 100)
+},
+willClose: () => {
+clearInterval(timerInterval)
+}
+}).then((result) => {
+})
+
+}else {
+Swal.fire({
+icon: 'error',
+title: 'Ops!',
+text: 'E-mail ou senha incorretos.',
+})
+}
+}
+document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+</script>
 </body>
 
 </html>

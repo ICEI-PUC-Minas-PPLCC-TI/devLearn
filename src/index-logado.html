@@ -12,6 +12,7 @@
 <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/src/scripts/desafio.js"></script>
 </head>
 
 <body>
@@ -37,17 +38,17 @@ class="navbar-toggler-icon"></span></button>
 <ul class="navbar-nav ml-auto">
 <li class="nav-item">
 <a class="nav-link" href="cadastro.html">
-<button class="btn btn-dark">CADASTRAR CURSO</button>
+<button class="btn btn-dark font-weight-bold">CADASTRAR CURSO</button>
 </a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="perfil.html">
-<button class="btn btn-roxo">MEU PERFIL</button>
+<button class="btn btn-roxo font-weight-bold">MEU PERFIL</button>
 </a>
 </li>
 </ul>
 <form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
-<input type="search" placeholder="Search" id="busca-1">
+<input type="search" placeholder="Buscar" id="busca-1">
 </form>
 </div>
 </div>
@@ -58,7 +59,7 @@ class="navbar-toggler-icon"></span></button>
 <div class="row align-items-center no-gutters">
 <div class="col-xl-6 col-lg-6 col-md-12">
 <div class="py-5 py-lg-0">
-<h5 class="text-white display-4 titulo-roxo">Faça parte da <i>comunidade</i> que mais cresce!</h5>
+<h5 class="text-white display-4 titulo-roxo">Desenvolva seu <i class="roxo-escuro"><strong class="font-weight-bold">aprendizado</strong></i> gratuitamente!</h5>
 <p class="mb-4 text-white">
 Estude da <strong>maneira correta</strong>, com conteúdos<br>
 focados no seu desenvolvimento!
@@ -75,10 +76,10 @@ focados no seu desenvolvimento!
 <div class="container h-100 mb-5 border-none">
 <div class="row align-items-center">
 <div class="col-xl-12">
-<h2 class="text-white titulo-roxo"><i>cursos e <strong class="roxo">artigos</strong></i></h2>
+<h2 class="text-white titulo-roxo"><i>cursos <strong class="roxo">disponíveis</strong></i></h2>
 <img src="assets/divide.png" class="img-fluid">
 <div class="row">
-<div class="card mt-4 mr-3" style="width: 17rem; border-radius: 30px;">
+<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
 <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
 <div class="card-body">
 <h5 class="card-title">Aula sobre Python</h5>
@@ -88,11 +89,11 @@ focados no seu desenvolvimento!
 </h5>
 <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
 dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block"><i class="fas fa-arrow-right"></i>
+<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
 Assistir aula</a>
 </div>
 </div>
-<div class="card mt-4 mr-3" style="width: 17rem; border-radius: 30px;">
+<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
 <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
 <div class="card-body">
 <h5 class="card-title">Aula sobre Python</h5>
@@ -102,11 +103,11 @@ Assistir aula</a>
 </h5>
 <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
 dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block"><i class="fas fa-arrow-right"></i>
+<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
 Assistir aula</a>
 </div>
 </div>
-<div class="card mt-4 mr-3" style="width: 17rem; border-radius: 30px;">
+<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
 <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
 <div class="card-body">
 <h5 class="card-title">Aula sobre Python</h5>
@@ -116,11 +117,11 @@ Assistir aula</a>
 </h5>
 <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
 dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block"><i class="fas fa-arrow-right"></i>
+<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
 Assistir aula</a>
 </div>
 </div>
-<div class="card mt-4" style="width: 17rem; border-radius: 30px;">
+<div class="card mt-4 cardi" style="width: 17rem; border-radius: 30px;">
 <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
 <div class="card-body">
 <h5 class="card-title">Aula sobre Python</h5>
@@ -130,7 +131,7 @@ Assistir aula</a>
 </h5>
 <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
 dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block"><i class="fas fa-arrow-right"></i>
+<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
 Assistir aula</a>
 </div>
 </div>
@@ -139,41 +140,12 @@ Assistir aula</a>
 </div>
 </div>
 
-<div class="bg-roxodev py-4 shadow-sm mb-5">
+<div class="bg-roxo"
+style="background: url(assets/explosao-cursos.png)no-repeat; background-size: cover; background-position: top center">
 <div class="container">
-<div class="row align-items-center no-gutters">
-<div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-4">
-<div class="d-flex align-items-center">
-<span style="font-size: 18px;">
-<i class="fas fa-info-circle"></i>
-</span>
-<div class="ml-3">
-<h4 class="mb-0 font-weight-semi-bold"><strong>+1000 aulas</strong> disponíveis!</h4>
-<p class="mb-0 color-sub">os mais diversos tipos de conteúdo!</p>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-4">
-<div class="d-flex align-items-center">
-<span style="font-size: 18px;">
-<i class="fas fa-info-circle"></i>
-</span>
-<div class="ml-3">
-<h4 class="mb-0 font-weight-semi-bold"><strong>expanda</strong> seus horizontes!</h4>
-<p class="mb-0 color-sub">adeque seu currículo ao mercado!</p>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-12">
-<div class="d-flex align-items-center">
-<span style="font-size: 18px;">
-<i class="fas fa-info-circle"></i>
-</span>
-<div class="ml-3">
-<h4 class="mb-0 font-weight-semi-bold">é pra <strong>todos</strong>!</h4>
-<p class="mb-0 color-sub">a devLearn é 100% gratuita para todos!</p>
-</div>
-</div>
+<div class="row justify-content-center text-center">
+<div class="col-md-9 col-12 mt-4 mb-4">
+<h2 class="display-4 text-white">Junte-se há uma <strong class="font-weight-bold">comunidade ativa!</strong></h2>
 </div>
 </div>
 </div>
@@ -181,7 +153,7 @@ Assistir aula</a>
 
 <div class="container">
 <div class="row">
-<div class="col-md-8 mb-5">
+<div class="col-md-8 mb-5 mt-4">
 <h2 class="text-white titulo-roxo"><i>sobre a <strong class="roxo">devLearn</strong></i></h2>
 <img src="assets/divide.png" class="img-fluid">
 <img src="assets/img-video.png" class="img-fluid">
@@ -199,8 +171,66 @@ consequat.
 Entre em contato pelo e-mail abaixo:
 </span>
 <span class="btn-roxo mt-4">
-<strong class="text-white"> <a>contato@devlearn.com</a></strong>
+<strong class="text-white"><a>contato@devlearn.com</a></strong>
 </span>
+</div>
+</div>
+</div>
+
+<section class="pq mt-4">
+<div class="container">
+
+<div class="row">
+<div class="col-lg-4 d-flex align-items-stretch">
+<div class="content" style="background-image: url(assets/fundo_card1.png);">
+<h3>Por onde começo?</h3>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+</p>
+</div>
+</div>
+<div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+<div class="icon-boxes d-flex flex-column justify-content-center">
+<div class="row">
+<div class="col-xl-4 d-flex align-items-stretch">
+<div class="icon-box mt-4 mt-xl-0">
+<h4 class="roxo">Não perca o foco</h4>
+<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+<h4 class="mt-5 "><i class="fas fa-hourglass glow-roxo"></i></h4>
+</div>
+</div>
+<div class="col-xl-4 d-flex align-items-stretch">
+<div class="icon-box mt-4 mt-xl-0">
+<h4 class="roxo">Pratique sempre</h4>
+<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+<h4 class="mt-5 "><i class="fas fa-laptop-code glow-roxo"></i></h4>
+</div>
+</div>
+<div class="col-xl-4 d-flex align-items-stretch">
+<div class="icon-box mt-4 mt-xl-0">
+<h4 class="roxo">Trabalhe em grupo</h4>
+<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+<h4 class="mt-5 "><i class="fas fa-users glow-roxo"></i></h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="bg-roxo mt-5"
+style="background: url(assets/explosao-cursos.png)no-repeat; background-size: cover; background-position: top center">
+<div class="container">
+<div class="row justify-content-center text-center">
+<div class="col-md-9 col-12 mt-4">
+<h2 class="display-4 text-white">Faça agora mesmo <br> <strong class="font-weight-bold">nosso desafio!</strong></h2>
+<div class="d-grid d-md-block mb-4">
+<a href="desafio.html" class="btn btn-roxu">Ir pro desafio!</a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -254,9 +284,9 @@ placeholder="Senha">
 </div>
 </footer>
 
+<script src="./scripts/scripts.js"></script>
 <script src="./scripts/cadastrar-usuarios.js"></script>
 <script>
-
 function processaFormLogin(event) {
 event.preventDefault();
 
@@ -265,33 +295,34 @@ var password = document.getElementById('password').value;
 
 resultadoLogin = loginUser(username, password);
 if (resultadoLogin) {
-window.location.href = 'index.html';
-alert('Login efetuado com sucesso');
-}
-else {
-alert('Usuário ou senha incorretos');
-}
-}
-document.getElementById('login-form').addEventListener('submit', processaFormLogin);
-</script>
+setTimeout(function() {
+window.location.href = "index-logado.html";
+}, 2000);
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts/scripts.js"></script>
-<script src="scripts/busca.js"></script>
-<script>
-function processaFormLogin(event) {
-event.preventDefault();
-
-var username = document.getElementById('username').value;
-var password = document.getElementById('password').value;
-
-resultadoLogin = loginUser(username, password);
-if (resultadoLogin) {
-window.location.href = 'index-logado.html';
-alert('Login efetuado com sucesso');
+let timerInterval
+Swal.fire({
+title: 'Bem-vindo de volta usuário!',
+html: 'Você será redirecionado...',
+timer: 2000,
+timerProgressBar: true,
+didOpen: () => {
+Swal.showLoading()
+timerInterval = setInterval(() => {
+const content = Swal.getHtmlContainer()
+}, 100)
+},
+willClose: () => {
+clearInterval(timerInterval)
 }
-else {
-alert('Usuário ou senha incorretos');
+}).then((result) => {
+})
+
+}else {
+Swal.fire({
+icon: 'error',
+title: 'Ops!',
+text: 'E-mail ou senha incorretos.',
+})
 }
 }
 document.getElementById('login-form').addEventListener('submit', processaFormLogin);

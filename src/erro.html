@@ -60,7 +60,7 @@ class="navbar-toggler-icon"></span></button>
 <ul class="navbar-nav ml-auto">
 <li class="nav-item">
 <a class="nav-link" href="#!">
-<button class="btn btn-roxo" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
+<button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
 </a>
 </li>
 </ul>
@@ -148,6 +148,8 @@ placeholder="Senha">
 <script src="scripts/scripts.js"></script>
 <script src="scripts/busca.js"></script>
 
+
+<script src="./scripts/cadastrar-usuarios.js"></script>
 <script>
 function processaFormLogin(event) {
 event.preventDefault();
@@ -157,14 +159,38 @@ var password = document.getElementById('password').value;
 
 resultadoLogin = loginUser(username, password);
 if (resultadoLogin) {
-window.location.href = 'index-logado.html';
-alert('Login efetuado com sucesso');
+setTimeout(function() {
+window.location.href = "index-logado.html";
+}, 2000);
+
+let timerInterval
+Swal.fire({
+title: 'Bem-vindo de volta usuário!',
+html: 'Você será redirecionado...',
+timer: 2000,
+timerProgressBar: true,
+didOpen: () => {
+Swal.showLoading()
+timerInterval = setInterval(() => {
+const content = Swal.getHtmlContainer()
+}, 100)
+},
+willClose: () => {
+clearInterval(timerInterval)
 }
-else {
-alert('Usuário ou senha incorretos');
+}).then((result) => {
+})
+
+}else {
+Swal.fire({
+icon: 'error',
+title: 'Ops!',
+text: 'E-mail ou senha incorretos.',
+})
 }
 }
-document.getElementById('login-form').addEventListener('submit', processaFormLogin);</script>
+document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+</script>
 
 </body>
 

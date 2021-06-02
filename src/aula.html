@@ -157,15 +157,8 @@ class="d-flex justify-content-between align-items-center text-inherit text-decor
 <div class="mb-4">
 <h3 class="mb-2">Descrição do curso</h3>
 <p class="text-muted">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.
-</p>
-<p class="text-muted">
-Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Python é uma linguagem de programação de alto nível, interpretada de script, imperativa, orientada a
+objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991.
 </p>
 </div>
 </div>
@@ -229,111 +222,26 @@ aria-valuemin="0" aria-valuemax="100"></div>
 <div class="mb-3">
 <div class="d-lg-flex align-items-center justify-content-between mb-5">
 <div class="mb-3 mb-lg-0">
-<h3 class="mb-0 texto-escuro">Comentários sobre</h3>
+<h3 class="mb-0 texto-escuro">Comentários/dúvidas</h3>
 </div>
 <div>
 </div>
 </div>
-<!-- <div class="media border-bottom pb-4 mb-4">
-<img src="assets/nerd.png" alt="" class="rounded-circle avatar-lg" style="opacity: 0.7;"
-width="30" />
-<div class="media-body ml-3">
-<h4 class="mb-1 texto-escuro font-weight-bold" style="font-size: 15px;">Mestre dos nerds
-<span class="ml-1 roxo font-weight-bold" style="font-size: 13px;">postado há 1 dia
-atrás</span>
-</h4>
-<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-</div>
-<div class="media border-bottom pb-4 mb-4">
-<img src="assets/nerd2.png" alt="" class="rounded-circle avatar-lg" style="opacity: 0.7;"
-width="30" />
-<div class="media-body ml-3">
-<h4 class="mb-1 texto-escuro font-weight-bold" style="font-size: 15px;">Pai dos nerds
-<span class="ml-1 roxo font-weight-bold" style="font-size: 13px;">postado há 10 dia
-atrás</span>
-</h4>
-<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-</div> -->
 
-<table id="grid-contatos" class="table table-striped table-dark">
-  <thead>
-      <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Telefone</th>
-          <th scope="col">E-mail</th>
-          <th scope="col">Cidade</th>
-          <th scope="col">Categoria</th>
-          <th scope="col">Site</th>
-      </tr>
-  </thead>
-  <tbody id="table-contatos">
-      <tr>
-          <td scope="row">1</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
-  </tbody>
-</table>
+<div id="lista-comentarios"></div>
 
-<form id="form-contato">
-<div class="form-group row">
-<div class="col-sm-4">
-<label for="inputId">Id</label>
-<input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+<form id="comentar">
+<div class="form-group">
+<input type="text" class="form-control" id="inpt_nome" placeholder="Qual seu nome?">
 </div>
-<div class="col-sm-8">
-<label for="inputNome">Nome (*)</label>
-<input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do contato">
+<div class="form-group">
+<textarea type="text" class="form-control" id="inpt_comentario" placeholder="O que você achou da aula?"></textarea>
 </div>
+<div class="form-group">
+<input type="hidden" class="form-control" id="id_01" name="id_01" placeholder="Digite seu nome">
 </div>
-<div class="form-group row">
-<div class="col-sm-5">
-<label for="inputTelefone">Telefone (*)</label>
-<input type="text" class="form-control" id="inputTelefone" required placeholder="Telefone">
-</div>
-<div class="col-sm-7">
-<label for="inputEmail">E-mail (*)</label>
-<input type="email" class="form-control" id="inputEmail" required placeholder="Informe o e-mail">
-</div>
-</div>
-<div class="form-group row">
-<div class="col-sm-6">
-<label for="inputCidade">Cidade</label>
-<input type="text" class="form-control" id="inputCidade" placeholder="Informe a cidade do contato" >
-</div>
-<div class="col-sm-6">
-<label for="inputCategoria">Categoria</label>
-<input type="text" class="form-control" id="inputCategoria" required placeholder="Informe a categoria do contato">
-</div>
-</div>
-<div class="form-group row">    
-<div class="col-sm-12">
-<label for="inputSite">Web Site (*)</label>
-<input type="text" class="form-control" id="inputSite" required placeholder="Web Site">
-</div>
-</div>
-<div class="form-group row">
-<div class="col-sm-4">
-<small>(*) Campos obrigatórios</small>
-</div>
-</div>
-<div class="form-group row">
-<div class="col-sm-12">
-<input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
-<input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
-<input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
-<input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
-<a href="lista_contatos.html"><input type="button" class="btn btn-warning" id="btnClear" value="Pesquisar Contatos"></a>
-</div>
+<div id="buttonEnviar">
+<button id="enviar" class="btn btn-primary btn-block" type="submit">Enviar comentário</button>
 </div>
 </form>
 
@@ -353,7 +261,7 @@ tempor incididunt ut labore et dolore magna aliqua.</p>
 <div class="card-body">
 <center>
 <a href="#!" class="btn btn-roxo btn-block" data-toggle="modal" data-target="#miModal">Iniciar curso</a>
-<a href="#" class="btn btn-branco btn-block">Quero me registrar!</a>
+<a href="cadastrar-usuarios.html" class="btn btn-branco btn-block">Quero me registrar!</a>
 </center>
 </div>
 </div>
@@ -424,138 +332,10 @@ aria-hidden="true">
 </div>
 </footer>
 
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="scripts/comentarios.js"></script>
 
-<script>
-function exibeContatos() {
-// Remove todas as linhas do corpo da tabela
-$("#table-contatos").html("");
-
-// Popula a tabela com os registros do banco de dados
-for (i = 0; i < db.data.length; i++) {
-let contato = db.data[i];    
-$("#table-contatos").append(`<tr><td scope="row">${contato.id}</td>
-<td>${contato.nome}</td>
-<td>${contato.telefone}</td>
-<td>${contato.email}</td>
-<td>${contato.cidade}</td>
-<td>${contato.categoria}</td>
-<td>${contato.website}</td>
-</tr>`);
-}
-}
-
-function init() {
-// Adiciona funções para tratar os eventos 
-$("#btnInsert").click(function () {
-// Verfica se o formulário está preenchido corretamente
-if (!$('#form-contato')[0].checkValidity()) {
-displayMessage("Preencha o formulário corretamente.");
-return;
-}
-
-// Obtem os valores dos campos do formulário
-let campoNome = $("#inputNome").val();
-let campoTelefone = $("#inputTelefone").val();
-let campoEmail = $('#inputEmail').val();
-let campoCidade = $("#inputCidade").val();
-let campoCategoria = $('#inputCategoria').val();
-let campoSite = $('#inputSite').val();
-let contato = { nome: campoNome, 
-telefone: campoTelefone, 
-email: campoEmail, 
-cidade: campoCidade, 
-categoria: campoCategoria,
-website: campoSite };
-
-insertContato(contato);
-
-// Reexibe os contatos
-exibeContatos();
-
-// Limpa o formulario
-$("#form-contato")[0].reset();
-});
-
-// Intercepta o click do botão Alterar
-$("#btnUpdate").click(function () {
-// Obtem os valores dos campos do formulário
-let campoId = $("#inputId").val();
-if (campoId == "") {
-displayMessage("Selecione um contato para ser alterado.");
-return;
-}
-let campoNome = $("#inputNome").val();
-let campoTelefone = $("#inputTelefone").val();
-let campoEmail = $("#inputEmail").val();
-let campoCidade = $("#inputCidade").val();
-let campoCategoria = $("#inputCategoria").val();
-let campoSite = $('#inputSite').val();
-let contato = { nome: campoNome, 
-telefone: campoTelefone, 
-email: campoEmail, 
-cidade: campoCidade, 
-categoria: campoCategoria,
-website: campoSite };
-
-updateContato(parseInt(campoId), contato);
-
-// Reexibe os contatos
-exibeContatos();
-
-// Limpa o formulario
-$("#form-contato")[0].reset();
-});
-
-// Intercepta o click do botão Excluir
-$("#btnDelete").click(function () {
-let campoId = $("#inputId").val();
-if (campoId == "") {
-displayMessage("Selecione um contato a ser excluído.");
-return;
-}
-deleteContato(parseInt(campoId));
-
-// Reexibe os contatos
-exibeContatos();
-
-// Limpa o formulario
-$("#form-contato")[0].reset();
-});
-
-// Intercepta o click do botão Listar Contatos
-$("#btnClear").click(function () {
-$("#form-contato")[0].reset();
-});
-
-// Oculta a mensagem de aviso após alguns segundos
-$('#msg').bind("DOMSubtreeModified", function () {
-window.setTimeout(function () {
-$(".alert").fadeTo(500, 0).slideUp(500, function () {
-$(this).remove();
-});
-}, 5000);
-});
-
-// Preenche o formulário quando o usuario clicar em uma linha da tabela 
-$("#grid-contatos").on("click", "tr", function (e) {
-let linhaContato = this;
-colunas = linhaContato.querySelectorAll("td");
-
-$("#inputId").val(colunas[0].innerText);
-$("#inputNome").val(colunas[1].innerText);
-$("#inputTelefone").val(colunas[2].innerText);
-$("#inputEmail").val(colunas[3].innerText);
-$("#inputCidade").val(colunas[4].innerText);
-$("#inputCategoria").val(colunas[5].innerText);
-$("#inputSite").val(colunas[6].innerText);
-});
-
-exibeContatos();
-}
-</script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="scripts/scripts.js"></script>
 <script src="scripts/busca.js"></script>
@@ -585,6 +365,9 @@ alert('Usuário ou senha incorretos');
 }
 document.getElementById('login-form').addEventListener('submit', processaFormLogin);
 </script>
+
+
+<script type="text/javascript">/*data hoje no input escondido*/var today = new Date();var dy = today.getDate();var mt = today.getMonth()+1;var yr = today.getFullYear();document.getElementById('id_01').value= dy+"/"+mt+" de "+yr;</script>
 </body>
 
 </html>

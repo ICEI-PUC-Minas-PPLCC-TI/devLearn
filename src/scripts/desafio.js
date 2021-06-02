@@ -52,7 +52,7 @@ const db_desafios = {
          text: `<h3 class="titulo-roxo">JavaScript é a mesma coisa que Java?</h3><br>
          A) Falso<br>
          B) Verdadeiro`,
-         answer: "Falso",
+         answer: "A",
       },
       {
          id: 7,

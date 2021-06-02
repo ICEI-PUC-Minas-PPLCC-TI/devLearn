@@ -33,6 +33,16 @@
 --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+::selection {
+background: #1f216b;
+color: #ffffff;
+}
+
+::-moz-selection {
+background: #1f216b;
+color: #ffffff;
+}
+
 /* Espaço em branco cadastro de usuários */
 .cadastrar-usuarios-space {
 min-height: 5.2rem;

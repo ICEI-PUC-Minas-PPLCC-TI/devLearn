@@ -33,6 +33,7 @@
 --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+<<<<<<< HEAD
 
 ::selection {
     background: #1f216b;
@@ -44,6 +45,17 @@
     color: #ffffff;
   }
   
+=======
+::selection {
+background: #1f216b;
+color: #ffffff;
+}
+
+::-moz-selection {
+background: #1f216b;
+color: #ffffff;
+}
+>>>>>>> ac55a4bbd41444f203bcfe2244f7525d89985beb
 
 /* Espaço em branco cadastro de usuários */
 .cadastrar-usuarios-space {

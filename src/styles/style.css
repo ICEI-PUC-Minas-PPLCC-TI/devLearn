@@ -10737,3 +10737,13 @@ transition: 0.2s;
 transition: 0.2s;;
 box-shadow: 0 0 20px #C82333;
 }
+
+.btn-salvar {
+background-color: #EEEEEE;
+border: 3px solid transparent;
+box-shadow: none;
+width: 240px;
+margin: 10px 10px;
+color: #666666;
+border-radius: 20px;
+}

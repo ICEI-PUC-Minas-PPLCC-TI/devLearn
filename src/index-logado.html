@@ -2,331 +2,349 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>devLearn • Área do aluno </title>
-<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-<link href="styles/style.css" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/src/scripts/desafio.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>devLearn • Área do aluno </title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/src/scripts/desafio.js"></script>
+    <script src="/src/scripts/cards_index.js"></script>
 </head>
 
 <body>
-<div id="preloader">
-<div class="inner">
-<div class="bolas">
-<div></div>
-<div></div>
-<div></div>
-</div>
-</div>
-</div>
+    <div id="preloader">
+        <div class="inner">
+            <div class="bolas">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
-<div class="container">
-<a class="navbar-brand" href="#!">
-<img src="assets/logo.png" width="130">
-</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
-class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="navbarResponsive">
-<ul class="navbar-nav ml-auto">
-<li class="nav-item">
-<a class="nav-link" href="cadastro.html">
-<button class="btn btn-dark font-weight-bold">CADASTRAR CURSO</button>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="perfil.html">
-<button class="btn btn-roxo font-weight-bold">MEU PERFIL</button>
-</a>
-</li>
-</ul>
-<form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
-<input type="search" placeholder="Buscar" id="busca-1">
-</form>
-</div>
-</div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
+        <div class="container">
+            <a class="navbar-brand" href="#!">
+                <img src="assets/logo.png" width="130">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html">
+                            <button class="btn btn-dark font-weight-bold">CADASTRAR CURSO</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil.html">
+                            <button class="btn btn-roxo font-weight-bold">MEU PERFIL</button>
+                        </a>
+                    </li>
+                </ul>
+                <form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
+                    <input type="search" placeholder="Buscar" id="busca-1">
+                </form>
+            </div>
+        </div>
+    </nav>
 
-<header class="bg-roxodev mb-5">
-<div class="container h-100">
-<div class="row align-items-center no-gutters">
-<div class="col-xl-6 col-lg-6 col-md-12">
-<div class="py-5 py-lg-0">
-<h5 class="text-white display-4 titulo-roxo">Desenvolva seu <i class="roxo-escuro"><strong class="font-weight-bold">aprendizado</strong></i> gratuitamente!</h5>
-<p class="mb-4 text-white">
-Estude da <strong>maneira correta</strong>, com conteúdos<br>
-focados no seu desenvolvimento!
-</p>
-</div>
-</div>
-<div class="col-xl-6 col-lg-6 col-md-12 text-lg-right text-center">
-<img src="assets/topo-img.png" alt="" class="img-fluid" />
-</div>
-</div>
-</div>
-</header>
+    <header class="bg-roxodev mb-5">
+        <div class="container h-100">
+            <div class="row align-items-center no-gutters">
+                <div class="col-xl-6 col-lg-6 col-md-12">
+                    <div class="py-5 py-lg-0">
+                        <h5 class="text-white display-4 titulo-roxo">Desenvolva seu <i class="roxo-escuro"><strong
+                                    class="font-weight-bold">aprendizado</strong></i> gratuitamente!</h5>
+                        <p class="mb-4 text-white">
+                            Estude da <strong>maneira correta</strong>, com conteúdos<br>
+                            focados no seu desenvolvimento!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 text-lg-right text-center">
+                    <img src="assets/topo-img.png" alt="" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </header>
 
-<div class="container h-100 mb-5 border-none">
-<div class="row align-items-center">
-<div class="col-xl-12">
-<h2 class="text-white titulo-roxo"><i>cursos <strong class="roxo">disponíveis</strong></i></h2>
-<img src="assets/divide.png" class="img-fluid">
-<div class="row">
-<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
-<img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-<div class="card-body">
-<h5 class="card-title">Aula sobre Python</h5>
-<h5 class="infos-card">
-<span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-<span style="font-size: 15px">★★★★☆</span>
-</h5>
-<p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
-Assistir aula</a>
-</div>
-</div>
-<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
-<img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-<div class="card-body">
-<h5 class="card-title">Aula sobre Python</h5>
-<h5 class="infos-card">
-<span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-<span style="font-size: 15px">★★★★☆</span>
-</h5>
-<p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
-Assistir aula</a>
-</div>
-</div>
-<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
-<img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-<div class="card-body">
-<h5 class="card-title">Aula sobre Python</h5>
-<h5 class="infos-card">
-<span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-<span style="font-size: 15px">★★★★☆</span>
-</h5>
-<p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
-Assistir aula</a>
-</div>
-</div>
-<div class="card mt-4 cardi" style="width: 17rem; border-radius: 30px;">
-<img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-<div class="card-body">
-<h5 class="card-title">Aula sobre Python</h5>
-<h5 class="infos-card">
-<span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-<span style="font-size: 15px">★★★★☆</span>
-</h5>
-<p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-dolor sit amet. </p>
-<a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>
-Assistir aula</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container h-100 mb-5 border-none" id="cardcontainer">
+        <div class="row align-items-center">
+            <div class="col-xl-12">
+                <h2 class="text-white titulo-roxo"><i>cursos <strong class="roxo">disponíveis</strong></i></h2>
+                <img src="assets/divide.png" class="img-fluid">
+                <div class="row" id="cards">
+                    <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+                        <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                        <div class="card-body">
+                            <h5 class="card-title">Aula sobre Python</h5>
+                            <h5 class="infos-card">
+                                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                                <span style="font-size: 15px">★★★★☆</span>
+                            </h5>
+                            <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                                ipsum
+                                dolor sit amet. </p>
+                            <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                    class="fas fa-arrow-right"></i>
+                                Assistir aula</a>
+                        </div>
+                    </div>
+                    <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+                        <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                        <div class="card-body">
+                            <h5 class="card-title">Aula sobre Python</h5>
+                            <h5 class="infos-card">
+                                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                                <span style="font-size: 15px">★★★★☆</span>
+                            </h5>
+                            <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                                ipsum
+                                dolor sit amet. </p>
+                            <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                    class="fas fa-arrow-right"></i>
+                                Assistir aula</a>
+                        </div>
+                    </div>
+                    <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+                        <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                        <div class="card-body">
+                            <h5 class="card-title">Aula sobre Python</h5>
+                            <h5 class="infos-card">
+                                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                                <span style="font-size: 15px">★★★★☆</span>
+                            </h5>
+                            <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                                ipsum
+                                dolor sit amet. </p>
+                            <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                    class="fas fa-arrow-right"></i>
+                                Assistir aula</a>
+                        </div>
+                    </div>
+                    <div class="card mt-4 cardi" style="width: 17rem; border-radius: 30px;">
+                        <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                        <div class="card-body">
+                            <h5 class="card-title">Aula sobre Python</h5>
+                            <h5 class="infos-card">
+                                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                                <span style="font-size: 15px">★★★★☆</span>
+                            </h5>
+                            <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                                ipsum
+                                dolor sit amet. </p>
+                            <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                    class="fas fa-arrow-right"></i>
+                                Assistir aula</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="bg-roxo"
-style="background: url(assets/explosao-cursos.png)no-repeat; background-size: cover; background-position: top center">
-<div class="container">
-<div class="row justify-content-center text-center">
-<div class="col-md-9 col-12 mt-4 mb-4">
-<h2 class="display-4 text-white">Junte-se há uma <strong class="font-weight-bold">comunidade ativa!</strong></h2>
-</div>
-</div>
-</div>
-</div>
+    <div class="bg-roxo"
+        style="background: url(assets/explosao-cursos.png)no-repeat; background-size: cover; background-position: top center">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-9 col-12 mt-4 mb-4">
+                    <h2 class="display-4 text-white">Junte-se há uma <strong class="font-weight-bold">comunidade
+                            ativa!</strong></h2>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-<div class="row">
-<div class="col-md-8 mb-5 mt-4">
-<h2 class="text-white titulo-roxo"><i>sobre a <strong class="roxo">devLearn</strong></i></h2>
-<img src="assets/divide.png" class="img-fluid">
-<img src="assets/img-video.png" class="img-fluid">
-</div>
-<div class="col-md-4 mt-4">
-<hr>
-<span class="sub">
-<br>
-A <strong>devLearn</strong> surgiu pronta para x e y ipsum dolor sit amet, consectetur adipisicing elit,
-sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.
-<br>
-Entre em contato pelo e-mail abaixo:
-</span>
-<span class="btn-roxo mt-4">
-<strong class="text-white"><a>contato@devlearn.com</a></strong>
-</span>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mb-5 mt-4">
+                <h2 class="text-white titulo-roxo"><i>sobre a <strong class="roxo">devLearn</strong></i></h2>
+                <img src="assets/divide.png" class="img-fluid">
+                <img src="assets/img-video.png" class="img-fluid">
+            </div>
+            <div class="col-md-4 mt-4">
+                <hr>
+                <span class="sub">
+                    <br>
+                    A <strong>devLearn</strong> surgiu pronta para x e y ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                    <br>
+                    Entre em contato pelo e-mail abaixo:
+                </span>
+                <span class="btn-roxo mt-4">
+                    <strong class="text-white"><a>contato@devlearn.com</a></strong>
+                </span>
+            </div>
+        </div>
+    </div>
 
-<section class="pq mt-4">
-<div class="container">
+    <section class="pq mt-4">
+        <div class="container">
 
-<div class="row">
-<div class="col-lg-4 d-flex align-items-stretch">
-<div class="content" style="background-image: url(assets/fundo_card1.png);">
-<h3>Por onde começo?</h3>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-</p>
-</div>
-</div>
-<div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-<div class="icon-boxes d-flex flex-column justify-content-center">
-<div class="row">
-<div class="col-xl-4 d-flex align-items-stretch">
-<div class="icon-box mt-4 mt-xl-0">
-<h4 class="roxo">Não perca o foco</h4>
-<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-<h4 class="mt-5 "><i class="fas fa-hourglass glow-roxo"></i></h4>
-</div>
-</div>
-<div class="col-xl-4 d-flex align-items-stretch">
-<div class="icon-box mt-4 mt-xl-0">
-<h4 class="roxo">Pratique sempre</h4>
-<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-<h4 class="mt-5 "><i class="fas fa-laptop-code glow-roxo"></i></h4>
-</div>
-</div>
-<div class="col-xl-4 d-flex align-items-stretch">
-<div class="icon-box mt-4 mt-xl-0">
-<h4 class="roxo">Trabalhe em grupo</h4>
-<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-<h4 class="mt-5 "><i class="fas fa-users glow-roxo"></i></h4>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="content" style="background-image: url(assets/fundo_card1.png);">
+                        <h3>Por onde começo?</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                            Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus
+                            optio ad corporis.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box mt-4 mt-xl-0">
+                                    <h4 class="roxo">Não perca o foco</h4>
+                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
+                                        aliquip</p>
+                                    <h4 class="mt-5 "><i class="fas fa-hourglass glow-roxo"></i></h4>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box mt-4 mt-xl-0">
+                                    <h4 class="roxo">Pratique sempre</h4>
+                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
+                                        aliquip</p>
+                                    <h4 class="mt-5 "><i class="fas fa-laptop-code glow-roxo"></i></h4>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box mt-4 mt-xl-0">
+                                    <h4 class="roxo">Trabalhe em grupo</h4>
+                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
+                                        aliquip</p>
+                                    <h4 class="mt-5 "><i class="fas fa-users glow-roxo"></i></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="bg-roxo mt-5"
-style="background: url(assets/explosao-cursos.png)no-repeat; background-size: cover; background-position: top center">
-<div class="container">
-<div class="row justify-content-center text-center">
-<div class="col-md-9 col-12 mt-4">
-<h2 class="display-4 text-white">Faça agora mesmo <br> <strong class="font-weight-bold">nosso desafio!</strong></h2>
-<div class="d-grid d-md-block mb-4">
-<a href="desafio.html" class="btn btn-roxu">Ir pro desafio!</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="bg-roxo mt-5"
+        style="background: url(assets/explosao-cursos.png)no-repeat; background-size: cover; background-position: top center">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-9 col-12 mt-4">
+                    <h2 class="display-4 text-white">Faça agora mesmo <br> <strong class="font-weight-bold">nosso
+                            desafio!</strong></h2>
+                    <div class="d-grid d-md-block mb-4">
+                        <a href="desafio.html" class="btn btn-roxu">Ir pro desafio!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="modal fade text-center" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modal_login"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-body">
-<form id="login-form" class="mt-4" onsubmit="loginUser(this)">
-<center>
-<img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">
-<h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
-<div class="form-group col-xl-8">
-<input type="email" class="form-control login" name="username" id="username"
-placeholder="E-mail">
-</div>
-<div class="form-group col-xl-8">
-<input type="password" class="form-control login" name="password" id="password"
-placeholder="Senha">
-</div>
-<button type="submit" class="btn btn-entrar btn-block">Entrar</button>
-<a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
-</center>
-</form>
-</div>
-</div>
-</div>
-</div>
+    <div class="modal fade text-center" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modal_login"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="login-form" class="mt-4" onsubmit="loginUser(this)">
+                        <center>
+                            <img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">
+                            <h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
+                            <div class="form-group col-xl-8">
+                                <input type="email" class="form-control login" name="username" id="username"
+                                    placeholder="E-mail">
+                            </div>
+                            <div class="form-group col-xl-8">
+                                <input type="password" class="form-control login" name="password" id="password"
+                                    placeholder="Senha">
+                            </div>
+                            <button type="submit" class="btn btn-entrar btn-block">Entrar</button>
+                            <a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<footer class="py-5 bg-devlearn">
-<div class="container">
-<p class="m-0 text-center text-white footer">
-<img class="img-fluid" width="100" src="assets/logo_footer.png">
-<br>
-2021 © <strong>devLearn</strong>. Todos os direitos reserados.
-<br>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-facebook"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-twitter"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-youtube"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-instagram"></i>
-</button>
-</p>
-</div>
-</footer>
+    <footer class="py-5 bg-devlearn">
+        <div class="container">
+            <p class="m-0 text-center text-white footer">
+                <img class="img-fluid" width="100" src="assets/logo_footer.png">
+                <br>
+                2021 © <strong>devLearn</strong>. Todos os direitos reserados.
+                <br>
+                <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-facebook"></i>
+                </button>
+                <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-twitter"></i>
+                </button>
+                <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-youtube"></i>
+                </button>
+                <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-instagram"></i>
+                </button>
+            </p>
+        </div>
+    </footer>
 
-<script src="./scripts/scripts.js"></script>
-<script src="./scripts/cadastrar-usuarios.js"></script>
-<script>
-function processaFormLogin(event) {
-event.preventDefault();
+    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/cadastrar-usuarios.js"></script>
+    <script>
+        function processaFormLogin(event) {
+            event.preventDefault();
 
-var username = document.getElementById('username').value;
-var password = document.getElementById('password').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
 
-resultadoLogin = loginUser(username, password);
-if (resultadoLogin) {
-setTimeout(function() {
-window.location.href = "index-logado.html";
-}, 2000);
+            resultadoLogin = loginUser(username, password);
+            if (resultadoLogin) {
+                setTimeout(function () {
+                    window.location.href = "index-logado.html";
+                }, 2000);
 
-let timerInterval
-Swal.fire({
-title: 'Bem-vindo de volta usuário!',
-html: 'Você será redirecionado...',
-timer: 2000,
-timerProgressBar: true,
-didOpen: () => {
-Swal.showLoading()
-timerInterval = setInterval(() => {
-const content = Swal.getHtmlContainer()
-}, 100)
-},
-willClose: () => {
-clearInterval(timerInterval)
-}
-}).then((result) => {
-})
+                let timerInterval
+                Swal.fire({
+                    title: 'Bem-vindo de volta usuário!',
+                    html: 'Você será redirecionado...',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                        timerInterval = setInterval(() => {
+                            const content = Swal.getHtmlContainer()
+                        }, 100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                })
 
-}else {
-Swal.fire({
-icon: 'error',
-title: 'Ops!',
-text: 'E-mail ou senha incorretos.',
-})
-}
-}
-document.getElementById('login-form').addEventListener('submit', processaFormLogin);
-</script>
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ops!',
+                    text: 'E-mail ou senha incorretos.',
+                })
+            }
+        }
+        document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+    </script>
 </body>
 
 </html>

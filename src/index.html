@@ -13,6 +13,7 @@
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
     <script src="/src/scripts/desafio.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/src/scripts/cards_index.js"></script>
 </head>
 
 <body onload="lembrar()">
@@ -76,12 +77,12 @@
         </div>
     </header>
 
-    <div class="container h-100 mb-5 border-none">
+    <div class="container h-100 mb-5 border-none" id="Card=container">
         <div class="row align-items-center">
             <div class="col-xl-12">
                 <h2 class="text-white titulo-roxo"><i>cursos <strong class="roxo">disponíveis</strong></i></h2>
                 <img src="assets/divide.png" class="img-fluid">
-                <div class="row">
+                <div class="row" id="cards">
                     <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
                         <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
                         <div class="card-body">

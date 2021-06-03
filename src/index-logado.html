@@ -13,6 +13,7 @@
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="/src/scripts/desafio.js"></script>
+  <script src="/src/scripts/cards_index.js"></script>
 </head>
 
 <body>
@@ -74,76 +75,80 @@
     </div>
   </header>
 
-  <div class="container h-100 mb-5 border-none">
+  <div class="container h-100 mb-5 border-none" id="cardcontainer">
     <div class="row align-items-center">
-      <div class="col-xl-12">
-        <h2 class="text-white titulo-roxo"><i>cursos <strong class="roxo">disponíveis</strong></i></h2>
-        <img src="assets/divide.png" class="img-fluid">
-        <div class="row">
-          <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
-            <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-            <div class="card-body">
-              <h5 class="card-title">Aula sobre Python</h5>
-              <h5 class="infos-card">
-                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-                <span style="font-size: 15px">★★★★☆</span>
-              </h5>
-              <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-                dolor sit amet. </p>
-              <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
-                  class="fas fa-arrow-right"></i>
-                Assistir aula</a>
+        <div class="col-xl-12">
+            <h2 class="text-white titulo-roxo"><i>cursos <strong class="roxo">disponíveis</strong></i></h2>
+            <img src="assets/divide.png" class="img-fluid">
+            <div class="row" id="cards">
+                <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+                    <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Aula sobre Python</h5>
+                        <h5 class="infos-card">
+                            <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                            <span style="font-size: 15px">★★★★☆</span>
+                        </h5>
+                        <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                            ipsum
+                            dolor sit amet. </p>
+                        <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                class="fas fa-arrow-right"></i>
+                            Assistir aula</a>
+                    </div>
+                </div>
+                <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+                    <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Aula sobre Python</h5>
+                        <h5 class="infos-card">
+                            <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                            <span style="font-size: 15px">★★★★☆</span>
+                        </h5>
+                        <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                            ipsum
+                            dolor sit amet. </p>
+                        <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                class="fas fa-arrow-right"></i>
+                            Assistir aula</a>
+                    </div>
+                </div>
+                <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+                    <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Aula sobre Python</h5>
+                        <h5 class="infos-card">
+                            <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                            <span style="font-size: 15px">★★★★☆</span>
+                        </h5>
+                        <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                            ipsum
+                            dolor sit amet. </p>
+                        <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                class="fas fa-arrow-right"></i>
+                            Assistir aula</a>
+                    </div>
+                </div>
+                <div class="card mt-4 cardi" style="width: 17rem; border-radius: 30px;">
+                    <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
+                    <div class="card-body">
+                        <h5 class="card-title">Aula sobre Python</h5>
+                        <h5 class="infos-card">
+                            <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
+                            <span style="font-size: 15px">★★★★☆</span>
+                        </h5>
+                        <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem
+                            ipsum
+                            dolor sit amet. </p>
+                        <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                                class="fas fa-arrow-right"></i>
+                            Assistir aula</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
-            <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-            <div class="card-body">
-              <h5 class="card-title">Aula sobre Python</h5>
-              <h5 class="infos-card">
-                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-                <span style="font-size: 15px">★★★★☆</span>
-              </h5>
-              <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-                dolor sit amet. </p>
-              <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
-                  class="fas fa-arrow-right"></i>
-                Assistir aula</a>
-            </div>
-          </div>
-          <div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
-            <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-            <div class="card-body">
-              <h5 class="card-title">Aula sobre Python</h5>
-              <h5 class="infos-card">
-                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-                <span style="font-size: 15px">★★★★☆</span>
-              </h5>
-              <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-                dolor sit amet. </p>
-              <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
-                  class="fas fa-arrow-right"></i>
-                Assistir aula</a>
-            </div>
-          </div>
-          <div class="card mt-4 cardi" style="width: 17rem; border-radius: 30px;">
-            <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
-            <div class="card-body">
-              <h5 class="card-title">Aula sobre Python</h5>
-              <h5 class="infos-card">
-                <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>
-                <span style="font-size: 15px">★★★★☆</span>
-              </h5>
-              <p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum
-                dolor sit amet. </p>
-              <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
-                  class="fas fa-arrow-right"></i>
-                Assistir aula</a>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
   <div class="bg-roxo"
     style="background: url(assets/explosao-cursos.png)no-repeat; background-size: cover; background-position: top center">
@@ -238,30 +243,6 @@
           <div class="d-grid d-md-block mb-4">
             <a href="desafio.html" class="btn btn-roxu">Ir pro desafio!</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade text-center" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modal_login"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <form id="login-form" class="mt-4" onsubmit="loginUser(this)">
-            <center>
-              <img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">
-              <h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
-              <div class="form-group col-xl-8">
-                <input type="email" class="form-control login" name="username" id="username" placeholder="E-mail">
-              </div>
-              <div class="form-group col-xl-8">
-                <input type="password" class="form-control login" name="password" id="password" placeholder="Senha">
-              </div>
-              <button type="submit" class="btn btn-entrar btn-block">Entrar</button>
-              <a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
-            </center>
-          </form>
         </div>
       </div>
     </div>

@@ -53,7 +53,7 @@ $(document).ready(function(){
         for(i = 0; i < db.data.length; i++)//Cira mais 4 cards dentro da div nova
         {
             let obj = db.data[i];
-            $('#cards-2').append(`<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+            $('#cards-2').append(`<div class="card mt-4 mr-3 cardi" style="width: 16rem; border-radius: 30px;">
             <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
             <div class="card-body">
                 <h5 class="card-title">${obj.titulo}</h5>
@@ -74,7 +74,7 @@ $(document).ready(function(){
         for(i = 0; i < db.data.length; i++) //Cria os 4 cards através de um looping de append
         {
             let obj = db.data[i];
-            $('#cards').append(`<div class="card mt-4 mr-3 cardi" style="width: 17rem; border-radius: 30px;">
+            $('#cards').append(`<div class="card mt-4 mr-3 cardi" style="width: 16rem; border-radius: 30px;">
             <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
             <div class="card-body">
                 <h5 class="card-title">${obj.titulo}</h5>

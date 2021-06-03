@@ -10731,3 +10731,9 @@ color: #848484;
   box-shadow: 0 0 20px #8157E6; 
 }
 
+.hh{
+transition: 0.2s; 
+}.hh:hover{
+transition: 0.2s;;
+box-shadow: 0 0 20px #C82333;
+}

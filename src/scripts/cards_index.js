@@ -46,7 +46,7 @@ db = db_cursos_iniciais;
 
 //Função para criar mais de 4 cards
 $(document).ready(function(){
-    if(db.data.length > 4 && db.data.length % 4 == 0) //Condição para que eles sejam criados
+    if(db.data.length > 4 ) //Condição para que eles sejam criados
     {
          $('#cards').html(""); //Apaga o html original da div de cards
         $('#cardcontainer').append('<div class="row" id ="cards-2"></div>'); //Cria um div nova onde eles irão ficar

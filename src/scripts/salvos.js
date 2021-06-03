@@ -1,4 +1,4 @@
-$("#bntAdd").click(() => {
+$("#btnAdd").click(() => {
     let obj = JSON.parse(localStorage.getItem("db_videos"))
     let videoURL = $("inframe").prop("scr");
     for (let i = 0; i < obj.length; i++) {

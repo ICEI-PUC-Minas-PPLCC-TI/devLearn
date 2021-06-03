@@ -24,4 +24,5 @@ function renderizarPagina() {
   document.getElementById("tableEmail").innerHTML = perfil.email
   document.getElementById("fotoPerfil").src = perfil.foto
   document.getElementById("nomePerfil").innerHTML = perfil.nome
+  document.getElementById("perfilDe").innerHTML = perfil.nome
 }

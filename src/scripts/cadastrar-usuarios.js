@@ -36,8 +36,25 @@ const dadosIniciais = {
   ],
 };
 
+/* var lembrarUsuario = JSON.parse(localStorage.getItem("lembrarUsuario"));
+  if (lembrarUsuario.valor) {
+    usuarioCorrente = JSON.parse(localStorage.getItem("usuarioCorrente"));   
+  } else {
+    usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+  } */
+
 function initLoginApp() {
-  usuarioCorrenteJSON = sessionStorage.getItem("usuarioCorrente");
+  var lembrarUsuario = JSON.parse(localStorage.getItem("lembrarUsuario"));
+  if (lembrarUsuario == null) {
+    usuarioCorrenteJSON = sessionStorage.getItem("usuarioCorrente");
+  } else {
+    if (lembrarUsuario.valor) {
+      usuarioCorrenteJSON = localStorage.getItem("usuarioCorrente");   
+    } else {
+      usuarioCorrenteJSON = sessionStorage.getItem("usuarioCorrente");
+    }
+  }
+  
   if (usuarioCorrenteJSON) {
     usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
   }
@@ -53,10 +70,12 @@ function initLoginApp() {
     localStorage.setItem("db_usuarios", JSON.stringify(dadosIniciais));
   } else {
     db_usuarios = JSON.parse(usuariosJSON);
+    localStorage.setItem("db_usuarios", JSON.stringify(db_usuarios));
   }
 }
 
 function loginUser(email, senha) {
+  var lembrarUsuario = document.getElementById("lembrar").checked;
   for (var i = 0; i < db_usuarios.usuarios.length; i++) {
     var usuario = db_usuarios.usuarios[i];
 
@@ -64,10 +83,25 @@ function loginUser(email, senha) {
       usuarioCorrente.id = usuario.id;
       usuarioCorrente.email = usuario.email;
       usuarioCorrente.nome = usuario.nome;
-      sessionStorage.setItem(
-        "usuarioCorrente",
-        JSON.stringify(usuarioCorrente)
+      lembrarUsuario = {
+        valor: lembrarUsuario,
+      }
+      // console.log("Funcao loginUser - lembrarUsuario = ", lembrarUsuario, "lembrarUsuario.valor = ", lembrarUsuario.valor);
+      localStorage.setItem(
+        "lembrarUsuario",
+        JSON.stringify(lembrarUsuario)
       );
+      if(lembrarUsuario.valor) {
+        localStorage.setItem(
+          "usuarioCorrente",
+          JSON.stringify(usuarioCorrente)
+        );
+      } else {
+        sessionStorage.setItem(
+          "usuarioCorrente",
+          JSON.stringify(usuarioCorrente)
+        );
+      }
       return true;
     }
   }
@@ -84,3 +118,87 @@ function addUser(nome, email, senha) {
 }
 
 initLoginApp();
+
+function processaFormLogin(event) {
+  event.preventDefault();
+
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  resultadoLogin = loginUser(username, password);
+  if (resultadoLogin) {
+    setTimeout(function () {
+      window.location.href = "index-logado.html";
+    }, 2000);
+
+    let timerInterval
+    Swal.fire({
+      title: 'Bem-vindo de volta usuário!',
+      html: 'Você será redirecionado...',
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+          const content = Swal.getHtmlContainer()
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+    })
+
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Ops!',
+      text: 'E-mail ou senha incorretos.',
+    })
+  }
+}
+
+function salvaLogin(event) {
+  // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+  event.preventDefault();
+
+  // Obtem os dados do formulário
+  let nome = document.getElementById('txt_nome').value;
+  let email = document.getElementById('txt_email').value;
+  let senha = document.getElementById('txt_senha').value;
+  let senha2 = document.getElementById('txt_senha2').value;
+  if (senha != senha2) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Não foi possível cadastrar!',
+      text: 'Digite seus dados corretamente.',
+    })
+    return
+  }
+
+  // Adiciona o usuário no banco de dados
+  addUser(nome, email, senha);
+
+  setTimeout(function () {
+    window.location.href = "index.html";
+  }, 2000);
+
+  let timerInterval
+  Swal.fire({
+    title: 'Sucesso!',
+    html: 'O cadastro foi realizado com sucesso! Redirecionando...',
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading()
+      timerInterval = setInterval(() => {
+        const content = Swal.getHtmlContainer()
+      }, 100)
+    },
+    willClose: () => {
+      clearInterval(timerInterval)
+    }
+  }).then((result) => {
+  })
+
+}

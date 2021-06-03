@@ -15,3 +15,11 @@ $('.tbl-header').css({'padding-right':scrollWidth});
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
   });
+
+function usuarioLogado() {
+  var usuarioCorrenteLocal = JSON.parse(localStorage.getItem("usuarioCorrente"));
+  var usuarioCorrenteSession = JSON.parse(sessionStorage.getItem("usuarioCorrente"))
+  if (!usuarioCorrenteLocal && !usuarioCorrenteSession) {
+    window.location.href = "index.html";
+  }
+}

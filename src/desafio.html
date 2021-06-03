@@ -40,28 +40,35 @@
       .desafios_page h1 {
          margin-top: 3rem;
       }
+
       .espacamento {
          margin-bottom: 24rem;
       }
+
       .desafios_corpo {
          margin: 8rem 0rem;
       }
+
       .desafio {
          margin-left: 10.2rem;
       }
+
       .desafio_title {
          font-size: 4rem;
          margin: 4rem 0px;
       }
+
       .desafio_para {
          font-size: 1.25rem;
       }
+
       .answer {
          margin: 3rem 0rem;
          padding: 0.5rem;
          width: 100%;
          border: none;
       }
+
       .desafio_answer {
          font-size: 16px;
          color: white;
@@ -96,7 +103,8 @@
             <ul class="navbar-nav ml-auto">
                <li class="nav-item">
                   <a class="nav-link" href="#!">
-                     <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
+                     <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER
+                        LOGIN</button>
                   </a>
                </li>
             </ul>
@@ -111,7 +119,8 @@
       <div style="opacity: 0;">
          <center>
             <h1>
-              <span style="background-color: #8157E6; font-size: 18px; border-radius: 20px; padding: 10px;"> Desafios</span>
+               <span style="background-color: #8157E6; font-size: 18px; border-radius: 20px; padding: 10px;">
+                  Desafios</span>
             </h1>
          </center>
       </div>
@@ -120,7 +129,8 @@
       </div>
       <div class="desafios_corpo">
          <center>
-            <button class="btn btn-roxo glow-roxo" id="btn_novo_desafio" onclick="carregarCurso()">Iniciar um desafio</button>
+            <button class="btn btn-roxo glow-roxo" id="btn_novo_desafio" onclick="carregarCurso()">Iniciar um
+               desafio</button>
          </center>
       </div>
       <div class="espacamento"></div>
@@ -180,48 +190,10 @@
    <script src="scripts/busca.js"></script>
    <script src="scripts/desafio.js"></script>
 
-<script src="./scripts/cadastrar-usuarios.js"></script>
-<script>
-function processaFormLogin(event) {
-event.preventDefault();
-
-var username = document.getElementById('username').value;
-var password = document.getElementById('password').value;
-
-resultadoLogin = loginUser(username, password);
-if (resultadoLogin) {
-setTimeout(function() {
-window.location.href = "index-logado.html";
-}, 2000);
-
-let timerInterval
-Swal.fire({
-title: 'Bem-vindo de volta usuário!',
-html: 'Você será redirecionado...',
-timer: 2000,
-timerProgressBar: true,
-didOpen: () => {
-Swal.showLoading()
-timerInterval = setInterval(() => {
-const content = Swal.getHtmlContainer()
-}, 100)
-},
-willClose: () => {
-clearInterval(timerInterval)
-}
-}).then((result) => {
-})
-
-}else {
-Swal.fire({
-icon: 'error',
-title: 'Ops!',
-text: 'E-mail ou senha incorretos.',
-})
-}
-}
-document.getElementById('login-form').addEventListener('submit', processaFormLogin);
-</script>
+   <script src="./scripts/cadastrar-usuarios.js"></script>
+   <script>
+      document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+   </script>
 </body>
 
 </html>

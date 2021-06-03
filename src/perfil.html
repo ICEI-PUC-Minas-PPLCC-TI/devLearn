@@ -2,192 +2,260 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>devLearn • Perfil </title>
-<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-<link href="styles/style.css" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>devLearn • Perfil </title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+  <link href="styles/style.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
-<div id="preloader">
-<div class="inner">
-<div class="bolas">
-<div></div>
-<div></div>
-<div></div>
-</div>
-</div>
-</div>
+<body onload="usuarioLogado(); renderizarPagina()">
+  <div id="preloader">
+    <div class="inner">
+      <div class="bolas">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
-<div class="container">
-<a class="navbar-brand" href="index-logado.html">
-<img src="assets/logo.png" width="130">
-</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
-class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="navbarResponsive">
-<ul class="navbar-nav ml-auto">
-<li class="nav-item">
-<a class="nav-link" href="#!">
-<button class="btn btn-roxo font-weight-bold">MEU PERFIL</button>
-</a>
-</li>
-</ul>
-<form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
-<input type="search" placeholder="Search" id="busca-1">
-</form>
-</div>
-</div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
+    <div class="container">
+      <a class="navbar-brand" href="index-logado.html">
+        <img src="assets/logo.png" width="130">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#!">
+              <button class="btn btn-roxo font-weight-bold">MEU PERFIL</button>
+            </a>
+          </li>
+        </ul>
+        <form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
+          <input type="search" placeholder="Search" id="busca-1">
+        </form>
+      </div>
+    </div>
+  </nav>
 
-<div class="container mt-5">
-<div class="main-body">
+  <div class="container mt-5">
+    <div class="main-body">
 
-<nav class="main-breadcrumb">
-<ol class="breadcrumb bg-roxodev">
-<li class="breadcrumb-item text-white"><i class="fas fa-user-circle"></i> Perfil de <strong>Davi</strong></li>
-</ol>
-</nav>
+      <nav class="main-breadcrumb">
+        <ol class="breadcrumb bg-roxodev">
+          <li class="breadcrumb-item text-white"><i class="fas fa-user-circle"></i> Perfil de <strong>Davi</strong></li>
+        </ol>
+      </nav>
 
-<div class="row gutters-sm">
-<div class="col-md-4 mb-3">
-<div class="card bg-escurao">
-<div class="card-body">
-<div class="d-flex flex-column align-items-center text-center">
-<img src="assets/nerd.png" alt="usuario" class="rounded-circle" width="150">
-<div class="mt-3">
-<h4>Davi P C</h4>
-<h6 class="text-secondary font-weight-bold" style="font-size: 12px">APRENDIZ</h6>
-<h6 class="text-secondary mb-4 font-weight-bold" style="font-size: 12px">PARTICIPA DESDE 02/06/2021</h6>
-<button class="btn btn-primary btn-sm font">Seguir usuário</button>
-<br>
-<button class="btn btn-seguir mt-2 btn-sm mb-3">Enviar mensagem</button>
-</div>
-<div class="mt-3">
-<a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
-<a href="#" class="text-white mr-2"><i class="fab fa-github"></i></a>
-<a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
-<a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
-<a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-</div>
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card bg-escurao">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img id="fotoPerfil" src="assets/profile.png" alt="usuario" class="rounded-circle" width="150">
+                <div class="mt-3">
+                  <h4 id="nomePerfil">Davi P C</h4>
+                  <h6 class="text-secondary font-weight-bold" style="font-size: 12px">APRENDIZ</h6>
+                  <h6 class="text-secondary mb-4 font-weight-bold" style="font-size: 12px">PARTICIPA DESDE 02/06/2021
+                  </h6>
+                  <!-- <button class="btn btn-primary btn-sm font">Seguir usuário</button>
+                  <br> -->
+                  <button class="btn btn-seguir mt-2 btn-sm mb-3" onclick="editarImagem(); mostrarForm()">Editar imagem de
+                    perfil</button>
+                  <div id="editarImagem" style="display: none">
+                    <form id="formEditarImagem">
+                      <input type="text" id="inputEditarImagem" placeholder="Digite a URL e aperte enter:">
+                    </form>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+                  <a href="#" class="text-white mr-2"><i class="fab fa-github"></i></a>
+                  <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                </div>
 
-</div>
-</div>
-</div>
+              </div>
+            </div>
+          </div>
 
-<div class="row gutters-sm">
+          <div class="row gutters-sm">
 
-<div class="col-sm-12 mb-3 mt-3">
-<div class="card h-100 bg-escurao">
-<div class="card-body">
-<h6 class="d-flex align-items-center mb-3"><i class="mr-2 roxo">minhas</i>habilidades</h6>
-<small>HTML5/CSS3</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-roxo" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>Python</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-roxo" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>JavaScript</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-roxo" role="progressbar" style="width: 79%" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>C/C++</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-roxo" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>API's</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-roxo" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-</div>
+            <div class="col-sm-12 mb-3 mt-3">
+              <div class="card h-100 bg-escurao">
+                <div class="card-body">
+                  <h6 class="d-flex align-items-center mb-3"><i class="mr-2 roxo">minhas</i>habilidades</h6>
+                  <small>HTML5/CSS3</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-roxo" role="progressbar" style="width: 90%" aria-valuenow="90"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small>Python</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-roxo" role="progressbar" style="width: 0%" aria-valuenow="0"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small>JavaScript</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-roxo" role="progressbar" style="width: 79%" aria-valuenow="19"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small>C/C++</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-roxo" role="progressbar" style="width: 10%" aria-valuenow="10"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <small>API's</small>
+                  <div class="progress mb-3" style="height: 5px">
+                    <div class="progress-bar bg-roxo" role="progressbar" style="width: 20%" aria-valuenow="20"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-</div>
-</div>
+          </div>
+        </div>
 
-<div class="col-md-8">
-<div class="card mb-3 bg-escurao">
-<div class="card-body">
-<div class="status box">
-<div class="status-menu">
-<a class="status-menu-item active" href="#">Linha do tempo</a>
-<a class="status-menu-item" href="#">Fotos</a>
-<a class="status-menu-item" href="#">Certificados</a>
-</div>
-<div class="status-main">
+        <div class="col-md-8">
+          <div class="card mb-3 bg-escurao">
+            <div class="card-body">
+              <div class="status box">
+                <div class="status-menu">
+                  <a class="status-menu-item active" href="#">Linha do tempo</a>
+                  <a class="status-menu-item" href="#">Fotos</a>
+                  <a class="status-menu-item" href="#">Certificados</a>
+                </div>
+                <div class="status-main">
 
-<textarea class="status-textarea" placeholder="Aprendi uma linguagem nova hoje..."></textarea>
-</div>
-<div class="status-actions">
-<a href="#" class="status-action" data-tooltip="Marcar pessoas">
-<i class="fas fa-at roxo"></i>
-</a>
-<a href="#" class="status-action" data-tooltip="Meu humor">
-<i class="far fa-meh-blank roxo"></i>
-</a>
-<a href="#" class="status-action" data-tooltip="Inserir localização">
-<i class="fas fa-location-arrow roxo"></i>
-</a>
-<button class="status-postar">Compartilhar</button>
-</div>
-</div>
+                  <textarea class="status-textarea" placeholder="Aprendi uma linguagem nova hoje..."></textarea>
+                </div>
+                <div class="status-actions">
+                  <a href="#" class="status-action" data-tooltip="Marcar pessoas">
+                    <i class="fas fa-at roxo"></i>
+                  </a>
+                  <a href="#" class="status-action" data-tooltip="Meu humor">
+                    <i class="far fa-meh-blank roxo"></i>
+                  </a>
+                  <a href="#" class="status-action" data-tooltip="Inserir localização">
+                    <i class="fas fa-location-arrow roxo"></i>
+                  </a>
+                  <button class="status-postar">Compartilhar</button>
+                </div>
+              </div>
 
-</div>
-</div>
+            </div>
+          </div>
+          <div class="card mb-3 bg-escurao">
+            <div class="card-body">
+              <div class="status box">
+                <div class="status-menu">
+                  <p class="status-menu-item active" href="#">Informações</p>
+                </div>
+                <div class="status-main">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                      </tr>
+                      <tr>
+                        <th id="tableNome">Nome</th>
+                        <th id="tableEmail">Email</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="status-actions">
+                  <a href="#" class="status-action" data-tooltip="Marcar pessoas">
+                    <i class="fas fa-at roxo"></i>
+                  </a>
+                  <a href="#" class="status-action" data-tooltip="Meu humor">
+                    <i class="far fa-meh-blank roxo"></i>
+                  </a>
+                  <a href="#" class="status-action" data-tooltip="Inserir localização">
+                    <i class="fas fa-location-arrow roxo"></i>
+                  </a>
+                  <button class="status-postar">Compartilhar</button>
+                </div>
+              </div>
 
-</div>
-</div>
+            </div>
+          </div>
+        </div>
 
-</div>
-</div>
+      </div>
 
-<footer class="py-5 bg-devlearn mt-5">
-<div class="container">
-<p class="m-0 text-center text-white footer">
-<img class="img-fluid" width="100" src="assets/logo_footer.png">
-<br>
-2021 © <strong>devLearn</strong>. Todos os direitos reserados.
-<br>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-facebook"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-twitter"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-youtube"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-instagram"></i>
-</button>
-</p>
-</div>
-</footer>
+    </div>
+  </div>
 
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="py-5 bg-devlearn mt-5">
+    <div class="container">
+      <p class="m-0 text-center text-white footer">
+        <img class="img-fluid" width="100" src="assets/logo_footer.png">
+        <br>
+        2021 © <strong>devLearn</strong>. Todos os direitos reserados.
+        <br>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-facebook"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-youtube"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-instagram"></i>
+        </button>
+      </p>
+    </div>
+  </footer>
 
-<script src="scripts/scripts.js"></script>
-<script src="scripts/busca.js"></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-var busca = document.getElementById("#busca_2");
-function buscarCurso(busca) {
-console.log("DEBUG: FUNCAO buscarCurso: ", busca);
-let obj = db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase());
-localStorage.setItem("obj_curso", JSON.stringify(obj));
-}
-</script>
+  <script src="scripts/scripts.js"></script>
+  <script src="scripts/busca.js"></script>
+  <script src="scripts/perfil.js"></script>
+  <script>
+    function mostrarForm() {
+      var div = document.getElementById("editarImagem");
+      if (div.style.display === "none") {
+        div.style.display = "block";
+      } else {
+        div.style.display = "none";
+      }
+    }
+    function editarImagem() {
 
+      console.log("editarImagem: ");
+      let urlNova = $("#inputEditarImagem").val();
+      console.log(urlNova, typeof urlNova)
+      if (urlNova) {
+        console.log("dentro if")
+        let perfilAtual = JSON.parse(localStorage.getItem("perfil"));
+        let novoPerfil = {
+          id: perfilAtual.id,
+          nome: perfilAtual.nome,
+          email: perfilAtual.email,
+          foto: urlNova,
+        };
+        document.getElementById("fotoPerfil").src = urlNova;
+        localStorage.setItem("perfil", JSON.stringify(novoPerfil));
+      }
+    }
+  </script>
 </body>
+
 </html>

@@ -2,195 +2,154 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>devLearn • Pesquisa </title>
-<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-<link href="styles/style.css" rel="stylesheet" />
-<link href="styles/erro.css" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-let obj = JSON.parse(localStorage.getItem("obj_curso"));
-console.log("DEBUG: PESQUISA.HTML VALOR OBJ", obj);
-if (!obj) {
-console.log("ERRO: OBJ VAZIO");
-} else {
-console.log("DEBUG: ", obj)
-const Id = obj.id;
-const Titulo = obj.titulo;
-const Nome = obj.nome;
-const Idioma = obj.idioma;
-const Conteudo = obj.conteudo;
-const Tags = obj.tags;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>devLearn • Pesquisa </title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+  <link href="styles/style.css" rel="stylesheet" />
+  <link href="styles/erro.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    let obj = JSON.parse(localStorage.getItem("obj_curso"));
+    console.log("DEBUG: PESQUISA.HTML VALOR OBJ", obj);
+    if (!obj) {
+      console.log("ERRO: OBJ VAZIO");
+    } else {
+      console.log("DEBUG: ", obj)
+      const Id = obj.id;
+      const Titulo = obj.titulo;
+      const Nome = obj.nome;
+      const Idioma = obj.idioma;
+      const Conteudo = obj.conteudo;
+      const Tags = obj.tags;
 
-$("#table-cursos").append(`<td>${Titulo}</td>
+      $("#table-cursos").append(`<td>${Titulo}</td>
 <td>${Nome}</td>
 <td>${Idioma}</td>
 <td>${Conteudo}</td>
 <td>${Tags}</td>
 </tr>`);
-}
-</script>
+    }
+  </script>
 </head>
 
 <body>
-<div id="preloader">
-<div class="inner">
-<div class="bolas">
-<div></div>
-<div></div>
-<div></div>
-</div>
-</div>
-</div>
+  <div id="preloader">
+    <div class="inner">
+      <div class="bolas">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
-<div class="container">
-<a class="navbar-brand" href="index.html">
-<img src="assets/logo.png" width="130">
-</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
-class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="navbarResponsive">
-<ul class="navbar-nav ml-auto">
-<li class="nav-item">
-<a class="nav-link" href="#!">
-<button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
-</a>
-</li>
-</ul>
-<form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
-<input type="search" placeholder="Search" id="busca-1">
-</form>
-</div>
-</div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/logo.png" width="130">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#!">
+              <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER
+                LOGIN</button>
+            </a>
+          </li>
+        </ul>
+        <form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
+          <input type="search" placeholder="Search" id="busca-1">
+        </form>
+      </div>
+    </div>
+  </nav>
 
-<div class="estrela">
-<div class="corpo">
-<img src="assets/triste.png" width="100" class="img-fluid mb-4"> 
-<h1 class="font-weight-bold">Pesquisa sem resultado!</h1>
-<center>
-<a href="index.html"><button class="btn btn-roxo mt-4">VOLTAR</button></a>
-</center>
-</div>
-<div class="objetos">
-<img class="foguete" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px">
-<div class="earth-moon">
-<img class="mundo" src="http://salehriaz.com/404Page/img/earth.svg" width="100px">
-<img class="lua" src="http://salehriaz.com/404Page/img/moon.svg" width="80px">
-</div>
-</div>
-<div class="glowing_stars">
-<div class="estrela"></div>
-<div class="estrela"></div>
-<div class="estrela"></div>
-<div class="estrela"></div>
-<div class="estrela"></div>
-</div>
-</div>
+  <div class="estrela">
+    <div class="corpo">
+      <img src="assets/triste.png" width="100" class="img-fluid mb-4">
+      <h1 class="font-weight-bold">Pesquisa sem resultado!</h1>
+      <center>
+        <a href="index.html"><button class="btn btn-roxo mt-4">VOLTAR</button></a>
+      </center>
+    </div>
+    <div class="objetos">
+      <img class="foguete" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px">
+      <div class="earth-moon">
+        <img class="mundo" src="http://salehriaz.com/404Page/img/earth.svg" width="100px">
+        <img class="lua" src="http://salehriaz.com/404Page/img/moon.svg" width="80px">
+      </div>
+    </div>
+    <div class="glowing_stars">
+      <div class="estrela"></div>
+      <div class="estrela"></div>
+      <div class="estrela"></div>
+      <div class="estrela"></div>
+      <div class="estrela"></div>
+    </div>
+  </div>
 
-<footer class="py-5 bg-devlearn mt-5">
-<div class="container">
-<p class="m-0 text-center text-white footer">
-<img class="img-fluid" width="100" src="assets/logo_footer.png">
-<br>
-2021 © <strong>devLearn</strong>. Todos os direitos reserados.
-<br>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-facebook"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-twitter"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-youtube"></i>
-</button>
-<button class="btn btn-secondary btn-sm mt-3 redes-sociais">
-<i class="fab fa-instagram"></i>
-</button>
-</p>
-</div>
-</footer>
+  <footer class="py-5 bg-devlearn mt-5">
+    <div class="container">
+      <p class="m-0 text-center text-white footer">
+        <img class="img-fluid" width="100" src="assets/logo_footer.png">
+        <br>
+        2021 © <strong>devLearn</strong>. Todos os direitos reserados.
+        <br>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-facebook"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-youtube"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+          <i class="fab fa-instagram"></i>
+        </button>
+      </p>
+    </div>
+  </footer>
 
-<div class="modal fade text-center" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modal_login"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-body">
-<form id="login-form" class="mt-4" onsubmit="loginUser(this)">
-<center>
-<img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">
-<h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
-<div class="form-group col-xl-8">
-<input type="email" class="form-control login" name="username" id="username"
-placeholder="E-mail">
-</div>
-<div class="form-group col-xl-8">
-<input type="password" class="form-control login" name="password" id="password"
-placeholder="Senha">
-</div>
-<button type="submit" class="btn btn-entrar btn-block">Entrar</button>
-<a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
-</center>
-</form>
-</div>
-</div>
-</div>
-</div>
+  <div class="modal fade text-center" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modal_login"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form id="login-form" class="mt-4" onsubmit="loginUser(this)">
+            <center>
+              <img class="img-fluid mb-2" width="100" src="assets/logo_footer.png">
+              <h5 class="text-white titulo-roxo mb-4">Faça seu login</h5>
+              <div class="form-group col-xl-8">
+                <input type="email" class="form-control login" name="username" id="username" placeholder="E-mail">
+              </div>
+              <div class="form-group col-xl-8">
+                <input type="password" class="form-control login" name="password" id="password" placeholder="Senha">
+              </div>
+              <button type="submit" class="btn btn-entrar btn-block">Entrar</button>
+              <a href="#"><label class="esqueceu-senha">Esqueceu sua senha?</label></a>
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts/scripts.js"></script>
-<script src="scripts/busca.js"></script>
-
-
-<script src="./scripts/cadastrar-usuarios.js"></script>
-<script>
-function processaFormLogin(event) {
-event.preventDefault();
-
-var username = document.getElementById('username').value;
-var password = document.getElementById('password').value;
-
-resultadoLogin = loginUser(username, password);
-if (resultadoLogin) {
-setTimeout(function() {
-window.location.href = "index-logado.html";
-}, 2000);
-
-let timerInterval
-Swal.fire({
-title: 'Bem-vindo de volta usuário!',
-html: 'Você será redirecionado...',
-timer: 2000,
-timerProgressBar: true,
-didOpen: () => {
-Swal.showLoading()
-timerInterval = setInterval(() => {
-const content = Swal.getHtmlContainer()
-}, 100)
-},
-willClose: () => {
-clearInterval(timerInterval)
-}
-}).then((result) => {
-})
-
-}else {
-Swal.fire({
-icon: 'error',
-title: 'Ops!',
-text: 'E-mail ou senha incorretos.',
-})
-}
-}
-document.getElementById('login-form').addEventListener('submit', processaFormLogin);
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./scripts/scripts.js"></script>
+  <script src="./scripts/cadastrar-usuarios.js"></script>
+  <script src="./scripts/busca.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+  </script>
 
 </body>
 

@@ -37,7 +37,8 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#!">
-              <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
+              <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER
+                LOGIN</button>
             </a>
           </li>
         </ul>
@@ -133,104 +134,22 @@
         <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
           <i class="fab fa-instagram"></i>
         </button>
-</p>
-</div>
-</footer>
+      </p>
+    </div>
+  </footer>
 
-<script src="./scripts/cadastrar-usuarios.js"></script>
-<script>
-function salvaLogin(event) {
-// Cancela a submissão do formulário para tratar sem fazer refresh da tela
-event.preventDefault();
-
-// Obtem os dados do formulário
-let nome = document.getElementById('txt_nome').value;
-let email = document.getElementById('txt_email').value;
-let senha = document.getElementById('txt_senha').value;
-let senha2 = document.getElementById('txt_senha2').value;
-if (senha != senha2) {
-Swal.fire({
-icon: 'error',
-title: 'Não foi possível cadastrar!',
-text: 'Digite seus dados corretamente.',
-})
-return
-}
-
-// Adiciona o usuário no banco de dados
-addUser(nome, email, senha);
-
-setTimeout(function() {
-window.location.href = "index.html";
-}, 2000);
-
-let timerInterval
-Swal.fire({
-title: 'Sucesso!',
-html: 'O cadastro foi realizado com sucesso! Redirecionando...',
-timer: 2000,
-timerProgressBar: true,
-didOpen: () => {
-Swal.showLoading()
-timerInterval = setInterval(() => {
-const content = Swal.getHtmlContainer()
-}, 100)
-},
-willClose: () => {
-clearInterval(timerInterval)
-}
-}).then((result) => {
-})
-
-}
+  <script src="./scripts/cadastrar-usuarios.js"></script>
+  <script src="scripts/scripts.js"></script>
+  <script>
 
     // Associar salvamento ao botao
     document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
 
 
-    function processaFormLogin(event) {
-event.preventDefault();
-
-var username = document.getElementById('username').value;
-var password = document.getElementById('password').value;
-
-resultadoLogin = loginUser(username, password);
-if (resultadoLogin) {
-setTimeout(function() {
-window.location.href = "index-logado.html";
-}, 2000);
-
-let timerInterval
-Swal.fire({
-title: 'Bem-vindo de volta usuário!',
-html: 'Você será redirecionado...',
-timer: 2000,
-timerProgressBar: true,
-didOpen: () => {
-Swal.showLoading()
-timerInterval = setInterval(() => {
-const content = Swal.getHtmlContainer()
-}, 100)
-},
-willClose: () => {
-clearInterval(timerInterval)
-}
-}).then((result) => {
-})
-
-}else {
-Swal.fire({
-icon: 'error',
-title: 'Ops!',
-text: 'E-mail ou senha incorretos.',
-})
-}
-}
-document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+    document.getElementById('login-form').addEventListener('submit', processaFormLogin);
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="scripts/scripts.js"></script>
 </body>
 
 </html>

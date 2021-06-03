@@ -117,6 +117,12 @@ if (!db) {
 }
 
 function init() {
+  var usuarioCorrente = JSON.parse(localStorage.getItem("usuarioCorrente"));
+  console.log("corrente: ", usuarioCorrente);
+  if (!usuarioCorrente) {
+      window.location.href = "index.html";
+  }
+
   $("#btnInsert").click(function () {
     var novoId = db.data.length == 0 ? 1 : db.data[db.data.length - 1].id + 1;
     let campoTitulo = $("#inputTitulo").val();

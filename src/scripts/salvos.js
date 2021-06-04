@@ -45,17 +45,36 @@ function abrirAula(id) {
     db = db_cursos_iniciais;
   }
   var cursoAtual = db.data[id];
-  console.log(cursoAtual);
+  localStorage.setItem("curso_atual", JSON.stringify(cursoAtual));
   window.location.href = "aula.html";
 }
 
-$("#btnAdd").click(() => {
-  let obj = JSON.parse(localStorage.getItem("db_videos"));
-  let videoURL = $("inframe").prop("scr");
-  for (let i = 0; i < obj.length; i++) {
-    if (obj.data[i].url == videoURL) {
-      localStorage.setItem("db_salvos", JSON.stringify(videoURL));
-      break;
-    }
+function salvarCurso() {
+  var cursoAtual = JSON.parse(localStorage.getItem("curso_atual"));
+  var salvos = JSON.parse(localStorage.getItem("cursos_salvos"));
+
+  var usuario = JSON.parse(localStorage.getItem("usuarioCorrente"));
+  if (!usuario) {
+    usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
   }
-});
+
+  if (usuario) {
+    if (!salvos) {
+      salvos = {
+        data: [],
+      };
+    }
+    let checarCursoAtualJaSalvo = 0;
+    for (i = 0; i < salvos.data.length; i++) {
+      if (salvos.data[i] == cursoAtual) checarCursoAtualJaSalvo++;
+    }
+    if (checarCursoAtualJaSalvo == 0) {
+      let usuarioECursoAtual = [usuario, cursoAtual];
+      salvos.data.push(usuarioECursoAtual);
+      localStorage.setItem("cursos_salvos", JSON.stringify(salvos));
+    }
+    console.log(salvos);
+  } else {
+    console.log("Erro: Você precisa estar logado para salvar um curso!");
+  }
+}

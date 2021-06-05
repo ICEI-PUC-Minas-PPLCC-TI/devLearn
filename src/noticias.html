@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>devLearn • Notícias</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+        <link href="styles/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/style.css" />
+    </head>
+
+    <body onload="renderizarNoticia()">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-devlearn">
+            <div class="container">
+                <a class="navbar-brand" href="#!">
+                    <img src="assets/logo.png" width="130">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <a class="nav-link" href="noticias.html">
+                            <button class="btn btn-dark font-weight-bold">NOTÍCIA</button>
+                        </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">
+                                <button class="btn btn-roxo" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
+                            </a>
+                        </li>
+                    </ul>
+                    <form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
+                        <input type="search" placeholder="Search" id="busca-1">
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container ">
+            <h2 class="text-white titulo-roxo"><i>Notícias do <strong class="roxo">Momento</strong></i></h2>
+            <img src="assets/divide.png" class="img-fluid">
+        </div>
+
+
+        <div class="container">
+            <ul class="news-list"></ul>
+        </div>
+
+        <footer class="py-5 bg-devlearn">
+            <div class="container">
+                <p class="m-0 text-center text-white footer">
+                    <img class="img-fluid" width="100" src="assets/logo_footer.png">
+                    <br>
+                    2021 © <strong>devLearn</strong>. Todos os direitos reserados.
+                    <br>
+                    <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-facebook"></i>
+                    </button>
+                    <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-twitter"></i>
+                    </button>
+                    <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-youtube"></i>
+                    </button>
+                    <button class="btn btn-secondary btn-sm mt-3 redes-sociais">
+                    <i class="fab fa-instagram"></i>
+                    </button>
+                </p>
+            </div>
+        </footer>
+
+        <script src="scripts/noticia.js"></script>
+
+    </body>
+</html>

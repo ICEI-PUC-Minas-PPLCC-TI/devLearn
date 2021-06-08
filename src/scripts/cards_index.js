@@ -61,9 +61,9 @@ $(document).ready(function(){
                 <p class="card-text mb-2">Idioma: ${obj.idioma}</p>
                 <p class="card-text mb-2">Conteúdo: ${obj.conteudo}</p>
                 <p class="card-text mb-2">Tags: ${obj.tags}</p>
-                <button id=${i} onclick="abrirAula(this.id) class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
-                        class="fas fa-arrow-right"></i>
-                    Assistir aula</button>
+                <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+                class="fas fa-arrow-right"></i>
+            Assistir aula</a>
             </div>`)           
         }
     }
@@ -82,9 +82,9 @@ $(document).ready(function(){
                 <p class="card-text mb-2">Idioma: ${obj.idioma}</p>
                 <p class="card-text mb-2">Conteúdo: ${obj.conteudo}</p>
                 <p class="card-text mb-2">Tags: ${obj.tags}</p>
-                <button id=${i} onclick="abrirAula(this.id)"class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
-                        class="fas fa-arrow-right"></i>
-                    Assistir aula</button>
+                <a href="aula.html" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+        class="fas fa-arrow-right"></i>
+    Assistir aula</a>
             </div>`);
         }
     }

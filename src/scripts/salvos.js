@@ -96,7 +96,7 @@ function carregarTable() {
       <td>${resultado.idioma}</td>
       <td>${resultado.conteudo}</td>
       <td>${resultado.tags}</td>
-      <td><a href="${resultado.url}" target="_blank" style="color: white; font-weight: bold; font-size: 1rem; background-color: #694fa9; padding: 10px 15px; border-radius: 20px;">Curso</a></td>
+      <td><button id="${resultado.id-1}" onclick="abrirAula(this.id)" class="btn btn-roxo btn-sm btn-block font-weight-bold">Assistir</button></td>
       </tr>`);
     }
   }

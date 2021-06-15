@@ -78,3 +78,26 @@ function salvarCurso() {
     console.log("Erro: Você precisa estar logado para salvar um curso!");
   }
 }
+
+function carregarTable() {
+  let obj = JSON.parse(localStorage.getItem("cursos_salvos"));
+  if (!obj) {
+    console.log("ERRO: OBJ VAZIO");
+  } 
+  else {
+    $("#table-cursos-salvos").html("");
+    for (i = 0; i < obj.data.length; i++) {
+      console.log("DEBUG (carregarTable()): ", obj.data[i][1])
+      let resultado = obj.data[i][1];
+      console.log("DEBUG resultado: ", resultado);
+      $("#table-cursos-salvos").append(`<tr>
+      <td>${resultado.titulo}</td>
+      <td>${resultado.nome}</td>
+      <td>${resultado.idioma}</td>
+      <td>${resultado.conteudo}</td>
+      <td>${resultado.tags}</td>
+      <td><a href="${resultado.url}" target="_blank" style="color: white; font-weight: bold; font-size: 1rem; background-color: #694fa9; padding: 10px 15px; border-radius: 20px;">Curso</a></td>
+      </tr>`);
+    }
+  }
+}

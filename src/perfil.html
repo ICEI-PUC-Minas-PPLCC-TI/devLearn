@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body onload="usuarioLogado(); renderizarPagina()">
+<body onload="usuarioLogado(); renderizarPagina(); carregarTable()">
   <div id="preloader">
     <div class="inner">
       <div class="bolas">
@@ -194,10 +194,24 @@
 
             </div>
           </div>
+          <div class="card mb-3 bg-escurao">
+            <div class="card-body">
+              <div class="status box">
+                <div class="status-menu">
+                  <p class="status-menu-item active" href="#">Cursos Salvos</p>
+                </div>
+                <div class="status-main">
+                  <table cellpadding="0" cellspacing="0">
+                    <tbody id="table-cursos-salvos">
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </div>
   </div>
 
@@ -230,6 +244,7 @@
   <script src="scripts/scripts.js"></script>
   <script src="scripts/busca.js"></script>
   <script src="scripts/perfil.js"></script>
+  <script src="scripts/salvos.js"></script>
   <script>
     var form = document.getElementById("formEditarImagem");
 		form.onsubmit = function(e)

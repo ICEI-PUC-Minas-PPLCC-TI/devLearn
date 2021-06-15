@@ -11,6 +11,8 @@
   <link href="styles/style.css" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+  <script src="./scripts/paginasDinamicas.js"></script>
 </head>
 
 <body>
@@ -51,7 +53,7 @@
   <header class="bg-roxodev mb-5">
     <div class="container h-100">
       <div class="row align-items-center no-gutters">
-        <div class="col-xl-6 col-lg-6 col-md-12">
+        <div class="col-xl-6 col-lg-6 col-md-12" id="titulo">
           <div class="py-5 py-lg-0">
             <h5 class="text-white display-4 titulo-roxo mt-4" style="font-size: 35px;">
               <span style="color: #472d87">resultado da pesquisa:</span>
@@ -105,7 +107,7 @@
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item px-0 pt-0">
                           <a class=" h4 mb-0 d-flex align-items-center text-inherit text-decoration-none active"
-                            data-toggle="collapse" href="#introducao" aria-expanded="true" aria-controls="introducao">
+                            data-toggle="collapse" href="#introducao" aria-expanded="true" aria-controls="introducao" id="introTitulo">
                             <div class="mr-auto">
                               Introdução a Python
                             </div>

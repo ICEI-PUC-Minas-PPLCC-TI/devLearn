@@ -55,21 +55,22 @@ function buscarCurso() {
   } */
   let obj = {
     data: [],
-  }
+  };
   for (i = 0; i < db.data.length; i++) {
     // obj.data.push(db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase()));
-    if (busca.toLowerCase() == db.data[i].titulo.toLowerCase() ||
-        busca.toLowerCase() == db.data[i].nome.toLowerCase() ||
-        busca.toLowerCase() == db.data[i].idioma.toLowerCase() ||
-        busca.toLowerCase() == db.data[i].conteudo.toLowerCase() ||
-        busca.toLowerCase() == db.data[i].tags.toLowerCase() ||
-        busca.toLowerCase() == db.data[i].url.toLowerCase()) {
+    if (
+      busca.toLowerCase() == db.data[i].titulo.toLowerCase() ||
+      busca.toLowerCase() == db.data[i].nome.toLowerCase() ||
+      busca.toLowerCase() == db.data[i].idioma.toLowerCase() ||
+      busca.toLowerCase() == db.data[i].conteudo.toLowerCase() ||
+      busca.toLowerCase() == db.data[i].tags.toLowerCase() ||
+      busca.toLowerCase() == db.data[i].url.toLowerCase()
+    ) {
       obj.data.push(db.data[i]);
-    } 
+    }
     localStorage.setItem("obj_curso", JSON.stringify(obj));
     // console.log("DEBUG: OBJ ", obj);
   }
-  
 }
 
 function carregarTable() {
@@ -77,29 +78,37 @@ function carregarTable() {
   if (!obj) {
     console.log("ERRO: OBJ VAZIO");
   } else {
-    console.log("DEBUG (carregarTable()): ", obj)
+    console.log("DEBUG (carregarTable()): ", obj);
     if (!obj.data.length) {
       window.location.href = "erro.html";
     }
     for (i = 0; i < obj.data.length; i++) {
       let resultado = obj.data[i];
-      $("#table-cursos").append(`<tr><td scope="row">${resultado.id}</td>
+      $("#table-cursos").append(`<tr><td scope="row">${i + 1}</td>
       <td>${resultado.titulo}</td>
       <td>${resultado.nome}</td>
       <td>${resultado.idioma}</td>
       <td>${resultado.conteudo}</td>
       <td>${resultado.tags}</td>
-      <td>${resultado.url}</td>
+      <td><a style="color: white;" href="${resultado.url}">${
+        resultado.url
+      }</a></td>
+      <td><button id= "${
+        resultado.id
+      }" onclick = "abrirAulaPesquisa(${i})" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i class="fas fa-arrow-right"></i>Ver curso</button></td>
       </tr>`);
     }
   }
 }
 
-// busca.addEventListener("keyup", (e) => {
-//   const searchString = e.target.value.toLowerCase();
-
-//   const filteredContent = bancoDeDados.filter((content) => {
-//     return contentName.toLowerCase().includes(searchString);
-//   });
-//   displayContent(filteredContent);
-// });
+function abrirAulaPesquisa(indice) {
+  let obj = JSON.parse(localStorage.getItem("obj_curso"));
+  if (obj) {
+    let curso = obj.data[indice];
+    console.log("abrirAulaPesquisa");
+    localStorage.setItem("curso_atual", JSON.stringify(curso));
+    window.location.href = "aula.html";
+  } else {
+    console.log("erro");
+  }
+}

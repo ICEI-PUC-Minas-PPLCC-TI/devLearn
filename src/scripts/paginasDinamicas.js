@@ -52,7 +52,7 @@ $(document).ready(function(){
       ${obj.titulo}
     </h5>
     <p class="mb-4 text-white">
-      <i>Autor: ${obj.nome} <br>Idioama: ${obj.idioma} <br>Tags: ${obj.tags}</i>
+      <i>Autor: ${obj.nome} <br>Idioma: ${obj.idioma} <br>Tags: ${obj.tags}</i>
     </p>
     <p class="mb-4 text-white">
       <span class="mr-4"><i class="fas fa-clock"></i> 1h 30 minutos</span>

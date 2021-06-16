@@ -80,25 +80,26 @@ function salvarCurso() {
 }
 
 $(document).ready(() => {
-    let obj = JSON.parse(localStorage.getItem("cursos_salvos"));
-    if (!obj) {
-      console.log("ERRO: OBJ VAZIO");
-    } 
-    else {
-      $("#table-cursos-salvos").html("");
-      for (i = 0; i < obj.data.length; i++) {
-        console.log("DEBUG (carregarTable()): ", obj.data[i][1])
-        let resultado = obj.data[i][1];
-        console.log("DEBUG resultado: ", resultado);
-        $("#table-cursos-salvos").append(`<tr>
-        <td>${resultado.titulo}</td>
-        <td>${resultado.nome}</td>
-        <td>${resultado.idioma}</td>
-        <td>${resultado.conteudo}</td>
-        <td>${resultado.tags}</td>
-        <td><button id="${resultado.id-1}" onclick="abrirAula(this.id)" class="btn btn-roxo btn-sm btn-block font-weight-bold">Assistir</button></td>
-        </tr>`);
-      }
+  let obj = JSON.parse(localStorage.getItem("cursos_salvos"));
+  if (!obj) {
+    console.log("ERRO: OBJ VAZIO");
+  } 
+  else {
+    $("#table-cursos-salvos").html("");
+    for (i = 0; i < obj.data.length; i++) {
+      console.log("DEBUG (carregarTable()): ", obj.data[i][1])
+      let resultado = obj.data[i][1];
+      console.log("DEBUG resultado: ", resultado);
+      $("#table-cursos-salvos").append(`<tr>
+      <td>${resultado.titulo}</td>
+      <td>${resultado.nome}</td>
+      <td>${resultado.idioma}</td>
+      <td>${resultado.conteudo}</td>
+      <td>${resultado.tags}</td>
+      <td><button id="${resultado.id-1}" onclick="abrirAula(this.id)" class="btn btn-roxo btn-sm 
+        btn-block font-weight-bold">Assistir</button></td>
+      </tr>`);
     }
+  }
 })
 

@@ -12,9 +12,19 @@
   <link href="styles/style.css" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function initPerfil() {
+      console.log("initPerfil");
+      onLoadLinha();
+      usuarioLogado();
+      console.log(usuarioLogado);
+      renderizarPagina();
+      carregarTable();
+    }
+  </script>
 </head>
 
-<body onload="usuarioLogado(); renderizarPagina(); carregarTable()">
+<body onload="initPerfil()">
   <div id="preloader">
     <div class="inner">
       <div class="bolas">
@@ -286,7 +296,7 @@
       }
     }
   </script>
-
+  
   
 </body>
 

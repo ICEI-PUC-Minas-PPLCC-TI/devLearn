@@ -18,7 +18,8 @@ $(document).ready(function(){
 
 function usuarioLogado() {
   var usuarioCorrenteLocal = JSON.parse(localStorage.getItem("usuarioCorrente"));
-  var usuarioCorrenteSession = JSON.parse(sessionStorage.getItem("usuarioCorrente"))
+  var usuarioCorrenteSession = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+  console.log("Checando login...");
   if (!usuarioCorrenteLocal && !usuarioCorrenteSession) {
     window.location.href = "index.html";
   }

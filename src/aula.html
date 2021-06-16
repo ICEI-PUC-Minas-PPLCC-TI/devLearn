@@ -36,10 +36,15 @@
           class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li id="nav-login" class="nav-item">
             <a class="nav-link" href="#!">
               <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER
                 LOGIN</button>
+            </a>
+          </li>
+          <li id="nav-perfil" class="nav-item">
+            <a class="nav-link" href="perfil.html">
+              <button class="btn btn-roxo font-weight-bold">MEU PERFIL</button>
             </a>
           </li>
         </ul>
@@ -107,7 +112,8 @@
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item px-0 pt-0">
                           <a class=" h4 mb-0 d-flex align-items-center text-inherit text-decoration-none active"
-                            data-toggle="collapse" href="#introducao" aria-expanded="true" aria-controls="introducao" id="introTitulo">
+                            data-toggle="collapse" href="#introducao" aria-expanded="true" aria-controls="introducao"
+                            id="introTitulo">
                             <div class="mr-auto">
                               Introdução a Python
                             </div>
@@ -349,6 +355,16 @@
 
     <script>
       document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+    </script>
+    <script>
+      let perfil = document.getElementById("nav-perfil");
+      let login = document.getElementById("nav-login");
+      let corrente = JSON.parse(localStorage.getItem("usuarioCorrente"));
+      if (!corrente) {
+        perfil.remove();
+      } else {
+        login.remove();
+      }
     </script>
 
 

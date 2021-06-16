@@ -46,18 +46,10 @@ if (!db) {
 
 function buscarCurso() {
   const busca = $("#busca-1").val();
-  // console.log("DEBUG: FUNCAO buscarCurso: ", busca);
-  /* let obj = JSON.parse(localStorage.getItem("obj_curso"));
-  if (!obj) {
-    obj = {
-      data: [],
-    }
-  } */
   let obj = {
     data: [],
   };
   for (i = 0; i < db.data.length; i++) {
-    // obj.data.push(db.data.find((o) => o.conteudo.toLowerCase() == busca.toLowerCase()));
     if (
       busca.toLowerCase() == db.data[i].titulo.toLowerCase() ||
       busca.toLowerCase() == db.data[i].nome.toLowerCase() ||

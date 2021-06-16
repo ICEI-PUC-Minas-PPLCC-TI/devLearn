@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -174,27 +175,30 @@
                   <a class="status-menu-item" href="#">Fotos</a>
                   <a class="status-menu-item" href="#">Certificados</a>
                 </div>
-                <div class="status-main">
-
-                  <textarea class="status-textarea" placeholder="Aprendi uma linguagem nova hoje..."></textarea>
-                </div>
-                <div class="status-actions">
-                  <a href="#" class="status-action" data-tooltip="Marcar pessoas">
-                    <i class="fas fa-at roxo"></i>
-                  </a>
-                  <a href="#" class="status-action" data-tooltip="Meu humor">
-                    <i class="far fa-meh-blank roxo"></i>
-                  </a>
-                  <a href="#" class="status-action" data-tooltip="Inserir localização">
-                    <i class="fas fa-location-arrow roxo"></i>
-                  </a>
-                  <button class="status-postar">Compartilhar</button>
-                </div>
-              </div>
-
+                <div class="sta1tus-main">
+<form id="comentar">
+<textarea class="form-control" id="inpt_linha" placeholder="Aprendi uma linguagem nova hoje..." required></textarea>
+</div>
+<div class="status-actions">
+<a href="#" class="status-action" data-tooltip="Marcar pessoas">
+<i class="fas fa-at roxo"></i>
+</a>
+<a href="#" class="status-action" data-tooltip="Meu humor">
+<i class="far fa-meh-blank roxo"></i>
+</a>
+<a href="#" class="status-action" data-tooltip="Inserir localização">
+<i class="fas fa-location-arrow roxo"></i>
+</a>
+<button type="submit" id="enviar" class="status-postar">Compartilhar</button>
+</div>
+</div>
+</form>
             </div>
           </div>
-          <div class="card mb-3 bg-escurao">
+
+          <div id="lista-linha"></div>
+
+          <div class="card mb-3 bg-escurao mt-4">
             <div class="card-body">
               <div class="status box">
                 <div class="status-menu">
@@ -241,6 +245,8 @@
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
+  <script src="scripts/linha-tempo?16062021.js"></script>
+  
   <script src="scripts/scripts.js"></script>
   <script src="scripts/busca.js"></script>
   <script src="scripts/perfil.js"></script>
@@ -279,6 +285,8 @@
       }
     }
   </script>
+
+  
 </body>
 
 </html>

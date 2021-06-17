@@ -24,3 +24,7 @@ function usuarioLogado() {
     window.location.href = "index.html";
   }
 }
+
+function removerCurso() {
+  localStorage.removeItem("curso_atual")
+}

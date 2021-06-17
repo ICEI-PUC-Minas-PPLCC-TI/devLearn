@@ -57,7 +57,7 @@ $(document).ready(function () {
     ) {
       let obj = db.data[i];
       $("#cards")
-        .append(`<div class="card mt-4 mr-3 cardi" style="width: 16rem; border-radius: 30px;">
+        .append(`<div id="${obj.id}" class="card mt-4 mr-3 cardi" style="width: 16rem; border-radius: 30px;">
           <img class="card-img-top filtro-curso" style=" border-radius: 30px;" src="assets/img-curso.png">
           <div class="card-body">
               <h5 class="card-title">${obj.titulo}</h5>
@@ -65,9 +65,7 @@ $(document).ready(function () {
               <p class="card-text mb-2">Idioma: ${obj.idioma}</p>
               <p class="card-text mb-2">Conteúdo: ${obj.conteudo}</p>
               <p class="card-text mb-2">Tags: ${obj.tags}</p>
-              <button id= "${
-                obj.id - 1
-              }" onclick = "abrirAula(this.id)" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+              <button id="${obj.id}" onclick = "abrirAula(this.id)" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
               class="fas fa-arrow-right"></i>
           Ver curso</button>
           </div>`);
@@ -90,9 +88,7 @@ $(document).ready(function () {
               <p class="card-text mb-2">Idioma: ${obj.idioma}</p>
               <p class="card-text mb-2">Conteúdo: ${obj.conteudo}</p>
               <p class="card-text mb-2">Tags: ${obj.tags}</p>
-              <button id= "${
-                obj.id - 1
-              }" onclick = "abrirAula(this.id)" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
+              <button id="${obj.id}" onclick = "abrirAula(this.id)" class="btn btn-roxo btn-sm btn-block font-weight-bold"><i
               class="fas fa-arrow-right"></i>
               Ver curso</button>
           </div>`);

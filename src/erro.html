@@ -13,28 +13,6 @@
   <script src="https://kit.fontawesome.com/06c06c3fc2.js" crossorigin="anonymous"></script>
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    let obj = JSON.parse(localStorage.getItem("obj_curso"));
-    console.log("DEBUG: PESQUISA.HTML VALOR OBJ", obj);
-    if (!obj) {
-      console.log("ERRO: OBJ VAZIO");
-    } else {
-      console.log("DEBUG: ", obj)
-      const Id = obj.id;
-      const Titulo = obj.titulo;
-      const Nome = obj.nome;
-      const Idioma = obj.idioma;
-      const Conteudo = obj.conteudo;
-      const Tags = obj.tags;
-
-      $("#table-cursos").append(`<td>${Titulo}</td>
-<td>${Nome}</td>
-<td>${Idioma}</td>
-<td>${Conteudo}</td>
-<td>${Tags}</td>
-</tr>`);
-    }
-  </script>
 </head>
 
 <body>
@@ -58,12 +36,11 @@
           class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li id="nav-login" class="nav-item">
             <a class="nav-link" href="#!">
-              <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER
-                LOGIN</button>
+                <button class="btn btn-roxo font-weight-bold" data-toggle="modal" data-target="#miModal">FAZER LOGIN</button>
             </a>
-          </li>
+        </li>
         </ul>
         <form id="busca-2" action="pesquisa.html" onsubmit="buscarCurso()">
           <input type="search" placeholder="Search" id="busca-1">
@@ -150,6 +127,13 @@
   <script>
     document.getElementById('login-form').addEventListener('submit', processaFormLogin);
   </script>
+  <script>
+    let login = document.getElementById("nav-login");
+    let corrente = JSON.parse(localStorage.getItem("usuarioCorrente"));
+    if (corrente) {
+        login.remove();
+    }
+</script>
 
 </body>
 

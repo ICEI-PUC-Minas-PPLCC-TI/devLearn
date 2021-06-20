@@ -1,31 +1,26 @@
-const searchFrom = document.querySelector ('.search');
-const input = document.querySelector ('.input');
-const newsList = document.querySelector ('.news-list');
+const GNDB_ENDPOINT = 'https://gnews.io/api/v4/top-headlines';
+const KEY_GNDB = 'b683c68c7aa7796c2e5733512b68bec0';
 
-function renderizarNoticia(){
-    const apiKey = '6c5560d0055935a321c59f52f2e7d534'
+$(() => { 
 
-    fetch(`https://gnews.io/api/v4/top-headlines?country=br&q=software&token=${apiKey}`)
-    .then(function (response) {
-        return response.json();
-    })
-                
-    .then(function (data) {
-        console.log(data);
-        data.articles.forEach(article =>{
-        let li = document.createElement("li");
-        let h1 = document.createElement("h1");
-        let p = document.createElement("p");
-        let a = document.createElement("a");
-        a.setAttribute("class", "btn-roxo link");
-        a.setAttribute("href", article.url);
-        a.textContent = ("Leia mais...");
-        h1.textContent = article.title;
-        p.textContent = article.description;
-        li.appendChild(h1);
-        li.appendChild(p);
-        li.appendChild(a);
-        newsList.appendChild(li);
-        })
+    $.get(GNDB_ENDPOINT + '?country=br' + '&q=software' + '&token=' + KEY_GNDB).then((data) => {
+        for (let i = 0; i < data.articles.length; i++)
+        {
+            let titulo = data.articles[i].title;
+            let descricao = data.articles[i].description;
+            let imagem = data.articles[i].image;
+            let link = data.articles[i].url;
+            $("#containerNoticias").append(`
+            <div class="row materias">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                    <img class="imagens_novidades" src="${imagem}" alt="">
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 texto_materia">
+                    <h2>${titulo}</h2>
+                    <p>${descricao}</p>
+                    <a href="${link}" class="btn btn-primary">Saiba Mais</a>
+                </div>
+            </div>`);
+        }
     });
-}
+});

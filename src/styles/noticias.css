@@ -1,0 +1,24 @@
+.noticias{
+    padding-top: 3%;
+}
+.materias{
+    padding: 2%;
+}
+
+.imagens_novidades{
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+@media screen and (max-width: 767px){
+    .texto_materia{
+        padding-top: 5%;
+        padding-bottom: 10%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .texto_materia{
+        padding-top: 2%;
+    }
+}
